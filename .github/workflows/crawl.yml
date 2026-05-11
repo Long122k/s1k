@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+          
       - name: Run crawler
         run: python getdeal1k.py
 

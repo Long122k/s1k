@@ -1,62 +1,89 @@
 """
-getdeal1k.py — Crawl & merge từ 2 nguồn:
-  1. shopee1k.com  (HTML + Next.js JSON)
-  2. addlivetag.com (REST API)
+getdeal1k.py — Crawl deal từ deal1k.vn
+- Dùng Playwright intercept network để bắt API response trực tiếp
+- Không cần tự build headers/cookie — browser làm hết
+- Output: data.json
 
-Dedup theo (shop_id, item_id).
-Output: data.json
+Cài đặt:
+  pip install playwright
+  playwright install chromium
 """
 
 import json
-import random
-import re
-from datetime import datetime
-from urllib.parse import quote
+from datetime import datetime, timezone, timedelta
+from urllib.parse import quote, urlencode
 
-import requests
+from playwright.sync_api import sync_playwright, Response
 
 # ─────────────────────────────────────────────
 # Config
 # ─────────────────────────────────────────────
 AFFILIATE_ID = "17351620126"
 OUTPUT_FILE  = "data.json"
-TIMEOUT      = 15
+BASE_URL     = "https://deal1k.vn"
 
-# ── Source 1: shopee1k.com ────────────────────
-S1_URL = "https://shopee1k.com"
-IMG_BASE = "https://down-bs-vn.img.susercontent.com/"
+SALE_SLOTS   = [0, 2, 9, 12, 15, 17, 19, 21]
+PRICE_RANGES = ["1K", "9K", "29K"]
 
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.4; rv:124.0) Gecko/20100101 Firefox/124.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Safari/605.1.15",
-    "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.82 Mobile Safari/537.36",
-    "Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.118 Mobile Safari/537.36",
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1",
-]
-
-S1_BASE_HEADERS = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "vi-VN,vi;q=0.9,en;q=0.8",
-    "Referer": "https://shopee1k.com/",
-}
-
-# ── Source 2: addlivetag.com ──────────────────
-S2_URL = "https://addlivetag.com/api/data_dealxk.php"
-S2_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/143.0.0.0",
-    "Referer": "https://addlivetag.com/deal1k.html",
-    "X-Requested-With": "XMLHttpRequest",
-    "Accept": "application/json",
-}
+VN_TZ = timezone(timedelta(hours=7))
 
 
 # ─────────────────────────────────────────────
-# Shared helpers
+# Tính startTime cho 2 slot: hiện tại + tiếp theo
+# ─────────────────────────────────────────────
+def get_slots_to_fetch() -> list[tuple[int, str]]:
+    """
+    Trả về list [(timestamp_utc, label)] cho 2 khung giờ:
+      - Slot hiện tại  : slot lớn nhất <= giờ hiện tại
+      - Slot tiếp theo : slot nhỏ nhất >  giờ hiện tại
+
+    Ví dụ 10:20 với SALE_SLOTS=[0,2,9,12,15,17,19,21]:
+      → [(ts_9h, "09:00"), (ts_12h, "12:00")]
+    """
+    now_vn       = datetime.now(VN_TZ)
+    current_hour = now_vn.hour
+
+    current_slot = None
+    next_slot    = None
+
+    for slot in SALE_SLOTS:
+        if current_hour >= slot:
+            current_slot = slot
+        else:
+            if next_slot is None:
+                next_slot = slot
+
+    result = []
+
+    # Slot hiện tại (có thể là slot cuối hôm qua nếu trước 0h)
+    if current_slot is not None:
+        slot_dt = now_vn.replace(hour=current_slot, minute=0, second=0, microsecond=0)
+    else:
+        # Trước 0h → slot cuối ngày hôm qua
+        yesterday   = now_vn - timedelta(days=1)
+        current_slot = SALE_SLOTS[-1]
+        slot_dt     = yesterday.replace(hour=current_slot, minute=0, second=0, microsecond=0)
+
+    ts    = int(slot_dt.astimezone(timezone.utc).timestamp())
+    result.append((ts, f"{current_slot:02d}:00"))
+
+    # Slot tiếp theo (có thể là slot đầu ngày mai nếu đã qua slot cuối)
+    if next_slot is not None:
+        slot_dt = now_vn.replace(hour=next_slot, minute=0, second=0, microsecond=0)
+    else:
+        # Đã qua slot cuối cùng → slot đầu tiên ngày mai
+        tomorrow = now_vn + timedelta(days=1)
+        next_slot = SALE_SLOTS[0]
+        slot_dt   = tomorrow.replace(hour=next_slot, minute=0, second=0, microsecond=0)
+
+    ts = int(slot_dt.astimezone(timezone.utc).timestamp())
+    result.append((ts, f"{next_slot:02d}:00"))
+
+    return result
+
+
+# ─────────────────────────────────────────────
+# Helpers
 # ─────────────────────────────────────────────
 def build_sub_id(price: int, time_slot: str, crawled_at: datetime) -> str:
     if price <= 1000:
@@ -81,163 +108,168 @@ def build_aff_link(shop_id: str, item_id: str, price: int, time_slot: str, crawl
     )
 
 
-# ─────────────────────────────────────────────
-# Source 1: shopee1k.com
-# ─────────────────────────────────────────────
-def s1_fetch() -> str:
-    headers = {**S1_BASE_HEADERS, "User-Agent": random.choice(USER_AGENTS)}
-    resp = requests.get(S1_URL, headers=headers, timeout=TIMEOUT)
-    resp.raise_for_status()
-    return resp.text
+def parse_response(data: dict, crawled_at: datetime) -> list[dict]:
+    """
+    Parse toàn bộ response của 1 priceRange.
+    - shop_id / item_id lấy từ shopeeUrl
+    - time_slot lấy từ activeSlot × timeSlots
+    - originalPrice đang dạng cents → chia 100000
+    - Dùng affiliateUrl của API nếu có, fallback về tự build
+    """
+    import re as _re
 
+    # Xác định time_slot label từ activeSlot + timeSlots
+    active_ts  = data.get("activeSlot", 0)
+    time_slots = data.get("timeSlots", [])
+    slot_label = next(
+        (s["startTimeDisplay"] for s in time_slots if s["startTime"] == active_ts),
+        ""
+    )
 
-def s1_extract_payload(html: str) -> dict:
-    scripts = re.findall(r"<script[^>]*>(.*?)</script>", html, re.DOTALL)
-    for script in scripts:
-        if "self.__next_f.push" not in script or "bundles" not in script:
-            continue
-        m = re.search(r'self\.__next_f\.push\(\[1,\s*("(?:[^"\\]|\\.)*")\]\)', script, re.DOTALL)
+    rows = []
+    for item in data.get("products", []):
+        # Parse shop_id / item_id từ shopeeUrl
+        shopee_url = item.get("shopeeUrl", "")
+        m = _re.search(r"/product/(\d+)/(\d+)", shopee_url)
         if not m:
             continue
-        inner = json.loads(m.group(1))
-        m2 = re.search(r"^\d+:(\[.*\]|\{.*\})", inner, re.DOTALL)
-        if not m2:
-            continue
-        data    = json.loads(m2.group(1))
-        payload = data[3] if isinstance(data, list) and len(data) > 3 else data
-        if "bundles" in payload:
-            return payload
-    raise ValueError("[S1] Không tìm thấy JSON payload")
+        shop_id = m.group(1)
+        item_id = m.group(2)
 
-
-def s1_parse(payload: dict, crawled_at: datetime) -> list[dict]:
-    rows = []
-    for bundle in payload.get("bundles", []):
-        time_slot = bundle.get("slot", {}).get("timeLabel", "")
-        for item in bundle.get("products", []):
-            img_key   = item.get("img", "")
-            image_url = img_key if img_key.startswith("http") else f"{IMG_BASE}{img_key}_tn"
-            shop_id   = str(item.get("shop_id", ""))
-            item_id   = str(item.get("item_id", ""))
-            price     = int(item.get("price", 0))
-            rows.append({
-                "shop_id":      shop_id,
-                "item_id":      item_id,
-                "title":        item.get("title", "").strip(),
-                "price":        price,
-                "quantity":     int(item.get("amount", 0)),
-                "time_slot":    time_slot,
-                "image_url":    image_url,
-                "product_link": build_aff_link(shop_id, item_id, price, time_slot, crawled_at),
-            })
-    return rows
-
-
-def crawl_s1(crawled_at: datetime) -> list[dict]:
-    print("[S1] Fetching shopee1k.com ...")
-    try:
-        html    = s1_fetch()
-        payload = s1_extract_payload(html)
-        rows    = s1_parse(payload, crawled_at)
-        print(f"[S1] OK — {len(rows)} sản phẩm")
-        return rows
-    except Exception as e:
-        print(f"[S1] FAILED — {e}")
-        return []
-
-
-# ─────────────────────────────────────────────
-# Source 2: addlivetag.com
-# ─────────────────────────────────────────────
-def s2_fetch() -> list[dict]:
-    resp = requests.get(S2_URL, headers=S2_HEADERS, timeout=TIMEOUT)
-    resp.raise_for_status()
-    data = resp.json()
-    if not isinstance(data, list):
-        raise ValueError("[S2] Response không phải dạng list")
-    return data
-
-
-def s2_parse(raw: list[dict], crawled_at: datetime) -> list[dict]:
-    rows = []
-    for item in raw:
-        shop_id   = str(item.get("shopid", ""))
-        item_id   = str(item.get("itemid", ""))
-        price     = int(item.get("price", 0))
-        time_slot = item.get("sale_slot", "")
-
-        # Ảnh: nguồn này đã trả về URL đầy đủ
-        image_url = item.get("img", "")
+        price         = int(item.get("price") or 0)
+        original_raw  = item.get("originalPrice") or 0
+        # originalPrice dạng cents (x100000) — nếu > 1 triệu thì chia, không thì dùng thẳng
+        original_price = int(original_raw / 100000) if original_raw > 1_000_000 else int(original_raw)
 
         rows.append({
-            "shop_id":      shop_id,
-            "item_id":      item_id,
-            "title":        item.get("title", "").strip(),
-            "price":        price,
-            "quantity":     int(item.get("amount", 0)),
-            "time_slot":    time_slot,
-            "image_url":    image_url,
-            "product_link": build_aff_link(shop_id, item_id, price, time_slot, crawled_at),
+            "_shop_id":      shop_id,
+            "_item_id":      item_id,
+            "title":         (item.get("name") or "").strip(),
+            "price":         price,
+            "original_price": original_price,
+            "discount_pct":  int(item.get("discount") or 0),
+            "quantity":      int(item.get("stock") or 0),
+            "time_slot":     slot_label,
+            "image_url":     item.get("image") or "",
+            "product_link":  build_aff_link(shop_id, item_id, price, slot_label, crawled_at),
         })
     return rows
 
 
-def crawl_s2(crawled_at: datetime) -> list[dict]:
-    print("[S2] Fetching addlivetag.com ...")
-    try:
-        raw  = s2_fetch()
-        rows = s2_parse(raw, crawled_at)
-        print(f"[S2] OK — {len(rows)} sản phẩm")
-        return rows
-    except Exception as e:
-        print(f"[S2] FAILED — {e}")
-        return []
-
-
-# ─────────────────────────────────────────────
-# Merge + Dedup
-# ─────────────────────────────────────────────
-def merge(s1_rows: list[dict], s2_rows: list[dict]) -> list[dict]:
-    """
-    Ưu tiên S1 (shopee1k.com). Nếu cùng (shop_id, item_id) thì bỏ S2.
-    """
-    seen = {(r["shop_id"], r["item_id"]) for r in s1_rows}
-    merged = list(s1_rows)
-
-    added = 0
-    for row in s2_rows:
-        key = (row["shop_id"], row["item_id"])
-        if key not in seen:
+def dedup(rows: list[dict]) -> list[dict]:
+    seen, result = set(), []
+    for row in rows:
+        key = (row["_shop_id"], row["_item_id"])
+        if key not in seen and row["_shop_id"] and row["_item_id"]:
             seen.add(key)
-            merged.append(row)
-            added += 1
-
-    print(f"[Merge] S1={len(s1_rows)} | S2 mới thêm={added} | Tổng={len(merged)}")
-    return merged
+            result.append(row)
+    return result
 
 
-# ─────────────────────────────────────────────
-# Write
-# ─────────────────────────────────────────────
-def write_json(rows: list[dict], filepath: str) -> None:
-    # Bỏ shop_id / item_id khỏi output cuối (internal keys, không cần ở frontend)
-    output = [{k: v for k, v in r.items() if k not in ("shop_id", "item_id")} for r in rows]
-    with open(filepath, "w", encoding="utf-8") as f:
+def write_json(rows: list[dict]) -> None:
+    output = [{k: v for k, v in r.items() if not k.startswith("_")} for r in rows]
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f"[Write] {len(output)} rows → {filepath}")
+    print(f"[Write] {len(output)} sản phẩm → {OUTPUT_FILE}")
+
+
+# ─────────────────────────────────────────────
+# Crawl bằng Playwright intercept
+# ─────────────────────────────────────────────
+def crawl() -> list[dict]:
+    slots = get_slots_to_fetch()
+    for ts, label in slots:
+        print(f"[Slot] {label}  |  startTime={ts}")
+
+    crawled_at   = datetime.now()
+    all_rows     = []
+    # Lưu responses theo (priceRange, startTime)
+    api_results: dict[tuple, dict] = {}
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Linux; Android 13; SM-G981B) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/146.0.0.0 Mobile Safari/537.36"
+            ),
+            viewport={"width": 390, "height": 844},
+        )
+        page = context.new_page()
+
+        # ── Intercept: bắt response của API flash-deals ──
+        def on_response(response: Response):
+            if "/api/flash-deals" not in response.url:
+                return
+            # Lấy startTime từ URL để làm key
+            st_match = __import__('re').search(r'startTime=(\d+)', response.url)
+            if not st_match:
+                return
+            st = int(st_match.group(1))
+            for pr in PRICE_RANGES:
+                if f"priceRange={pr}" in response.url:
+                    try:
+                        raw_text = response.text()
+                        data     = json.loads(raw_text)
+                        payload  = data.get("data") or data
+                        items    = payload.get("products") or []
+                        api_results[(pr, st)] = payload
+                        print(f"[Intercept] priceRange={pr} startTime={st} → {len(items)} sản phẩm")
+                    except Exception as e:
+                        print(f"[Intercept] priceRange={pr} parse lỗi — {e}")
+                    break
+
+        page.on("response", on_response)
+
+        # ── Vào trang chủ để lấy session ──
+        print("[Browser] Vào trang chủ ...")
+        page.goto(BASE_URL, wait_until="networkidle", timeout=30000)
+
+        # ── Trigger API calls: 2 slots × 3 priceRanges ──
+        for start_time, slot_label in slots:
+            for price_range in PRICE_RANGES:
+                params = urlencode({
+                    "mode":       "flash-sale",
+                    "priceRange": price_range,
+                    "page":       1,
+                    "pageSize":   100,
+                    "startTime":  start_time,
+                })
+                api_url = f"/api/flash-deals?{params}"
+                print(f"[Browser] slot={slot_label} priceRange={price_range} ...")
+                page.evaluate(f"""
+                    fetch('{api_url}', {{
+                        method: 'GET',
+                        headers: {{ 'accept': '*/*' }}
+                    }})
+                """)
+                page.wait_for_timeout(2000)
+
+        browser.close()
+
+    # ── Parse kết quả: loop 2 slots × 3 priceRanges ──
+    for start_time, slot_label in slots:
+        for price_range in PRICE_RANGES:
+            data = api_results.get((price_range, start_time))
+            if not data or not data.get("products"):
+                print(f"[Parse] slot={slot_label} priceRange={price_range} — không có data")
+                continue
+            rows = parse_response(data, crawled_at)
+            print(f"[Parse] slot={slot_label} priceRange={price_range} → {len(rows)} sản phẩm")
+            all_rows.extend(rows)
+
+    return all_rows
 
 
 # ─────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────
 def main():
-    crawled_at = datetime.now()
-
-    s1 = crawl_s1(crawled_at)
-    s2 = crawl_s2(crawled_at)
-
-    merged = merge(s1, s2)
-    write_json(merged, OUTPUT_FILE)
+    all_rows = crawl()
+    # deduped  = dedup(all_rows)
+    # print(f"[Dedup] {len(all_rows)} → {len(deduped)} (bỏ {len(all_rows) - len(deduped)} trùng)")
+    write_json(all_rows)
 
 
 if __name__ == "__main__":

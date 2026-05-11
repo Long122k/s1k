@@ -360,7 +360,7 @@ function renderFilters() {
     { val: 'all',   label: 'Mọi giá' },
     { val: '1k',    label: '🔥 Deal 1K' },
     { val: '9k',    label: '💥 Deal 9K' },
-    { val: 'other', label: 'Giá khác' },
+    { val: '29k', label: '💥 Deal 29K' },
   ];
 
   document.getElementById('timeFilterRow').innerHTML =
@@ -402,9 +402,10 @@ function filterDeals() {
     const matchKey   = !kw || d.title.toLowerCase().includes(kw);
     const matchPrice =
       currentPrice === 'all'   ? true :
-      currentPrice === '1k'    ? p <= 1000 :
-      currentPrice === '9k'    ? p > 1000 && p <= 9000 :
-      /* other */                p > 9000;
+      currentPrice === '1k'    ? p <= 8000 :
+      currentPrice === '9k'    ? p > 8000 && p <= 28000 :
+      currentPrice === '29k'   ? p > 28000 :
+      false;
     return matchTime && matchKey && matchPrice;
   });
 
