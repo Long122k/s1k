@@ -108,7 +108,7 @@ def build_aff_link(shop_id: str, item_id: str, price: int, time_slot: str, crawl
     )
 
 
-def parse_response(data: dict, crawled_at: datetime) -> list[dict]:
+def parse_response(data: dict, crawled_at: datetime, slot_label: str) -> list[dict]:
     """
     Parse toàn bộ response của 1 priceRange.
     - shop_id / item_id lấy từ shopeeUrl
@@ -121,10 +121,7 @@ def parse_response(data: dict, crawled_at: datetime) -> list[dict]:
     # Xác định time_slot label từ activeSlot + timeSlots
     active_ts  = data.get("activeSlot", 0)
     time_slots = data.get("timeSlots", [])
-    slot_label = next(
-        (s["startTimeDisplay"] for s in time_slots if s["startTime"] == active_ts),
-        ""
-    )
+
 
     rows = []
     for item in data.get("products", []):
@@ -255,7 +252,7 @@ def crawl() -> list[dict]:
             if not data or not data.get("products"):
                 print(f"[Parse] slot={slot_label} priceRange={price_range} — không có data")
                 continue
-            rows = parse_response(data, crawled_at)
+            rows = parse_response(data, crawled_at, slot_label)
             print(f"[Parse] slot={slot_label} priceRange={price_range} → {len(rows)} sản phẩm")
             all_rows.extend(rows)
 
