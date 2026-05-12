@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sale1K – Săn Deal Shopee</title>
+  <title>Gia1k – Săn Deal 1k Shopee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -26,249 +26,298 @@
 
     /* ── HEADER ── */
     header { background: linear-gradient(135deg, var(--orange) 0%, #ff8f00 100%); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(255,87,34,.35); }
-    .header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 8px; gap: 8px; }
-    .logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; color: #fff; }
+    .header-top { display: flex; align-items: center; gap: 8px; padding: 10px 12px 8px; }
+    .logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; color: #fff; flex-shrink: 0; }
     .logo span { color: #ffe082; }
     .search-wrap { position: relative; flex: 1; }
-    .search-wrap input { width: 100%; padding: 8px 10px 8px 32px; border-radius: 10px; border: none; outline: none; background: rgba(255,255,255,.95); font-family: inherit; }
-    .search-wrap .s-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; }
+    .search-wrap input { width: 100%; padding: 8px 10px 8px 32px; border-radius: 10px; border: none; outline: none; background: rgba(255,255,255,.95); font-family: inherit; font-size: 13px; }
+    .search-wrap .s-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; pointer-events: none; }
+
+    /* Zalo button */
+    .zalo-btn {
+      flex-shrink: 0;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+      text-decoration: none;
+      transition: transform .15s;
+    }
+    .zalo-btn:active { transform: scale(.88); }
+    .zalo-btn img { width: 22px; height: 22px; object-fit: contain; border-radius: 4px; }
 
     /* ── FILTER TABS ── */
     .filter-row { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 0 12px 8px; scrollbar-width: none; }
     .filter-row::-webkit-scrollbar { display: none; }
-    .filter-label { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.7); white-space: nowrap; text-transform: uppercase; }
-    .chip { padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; cursor: pointer; border: none; transition: all .2s; font-family: inherit; }
-    .chip.active { background: #fff; color: var(--orange); box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
-    .chip.inactive { background: rgba(0,0,0,0.15); color: rgba(255,255,255,0.9); }
+    .filter-label { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.7); white-space: nowrap; text-transform: uppercase; flex-shrink: 0; }
+    .chip { padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; cursor: pointer; border: none; transition: all .2s; font-family: inherit; flex-shrink: 0; }
+    .chip.active   { background: #fff; color: var(--orange); box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+    .chip.inactive { background: rgba(0,0,0,.15); color: rgba(255,255,255,.9); }
 
     /* ── GRID ── */
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 8px 80px; }
+
+    /* ── CARD ── */
     .card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
-    
-    .badge-pct { position: absolute; top: 7px; left: 7px; z-index: 3; background: var(--red); color: #fff; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
-    .share-btn { position: absolute; top: 6px; right: 6px; z-index: 10; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .share-btn svg { width: 15px; height: 15px; stroke: var(--orange); stroke-width: 2.8; fill: none; }
+
+    .badge-pct { position: absolute; top: 7px; left: 7px; z-index: 3; background: var(--red); color: #fff; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; font-family: 'Nunito', sans-serif; }
+
+    /* Share button */
+    .share-btn {
+      position: absolute; top: 7px; right: 7px; z-index: 10;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(4px);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      transition: transform .15s;
+    }
+    .share-btn:active { transform: scale(.88); }
 
     .img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #eee; }
-    .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .time-badge { position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.6); color: #fff; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .time-badge { position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,.6); color: #fff; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
 
     .card-body { padding: 8px; flex: 1; display: flex; flex-direction: column; }
-    .card-title { font-size: 11px; font-weight: 600; min-height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-transform: capitalize; color: #444; }
-    .price-row { margin-top: 6px; display: flex; align-items: baseline; gap: 4px; }
-    .price-now { font-size: 18px; font-weight: 900; color: var(--orange); font-family: 'Nunito'; }
+    .card-title { font-size: 11px; font-weight: 600; min-height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-transform: capitalize; color: #444; line-height: 1.45; }
+    .price-row { margin-top: 6px; display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap; }
+    .price-now { font-size: 18px; font-weight: 900; color: var(--orange); font-family: 'Nunito', sans-serif; line-height: 1; }
+    .price-unit { color: var(--orange); font-size: 11px; font-weight: 700; }
     .price-orig { font-size: 10px; color: var(--muted); text-decoration: line-through; }
-    
+
     .stock-bar-wrap { margin-top: 8px; height: 5px; background: #eee; border-radius: 10px; overflow: hidden; }
     .stock-bar { height: 100%; background: linear-gradient(90deg, #ff8a65, #f44336); border-radius: 10px; }
-    
-    .buy-btn { margin-top: 10px; background: linear-gradient(90deg, var(--orange), #ff8f00); color: #fff; text-align: center; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: 800; text-decoration: none; font-family: 'Nunito'; }
+    .stock-label { font-size: 9px; color: var(--muted); margin-top: 4px; font-weight: 600; }
 
-    #noResult { display: none; grid-column: span 2; text-align: center; padding: 50px; color: var(--muted); }
+    .buy-btn { display: block; margin-top: 10px; background: linear-gradient(90deg, var(--orange), #ff8f00); color: #fff; text-align: center; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: 800; text-decoration: none; font-family: 'Nunito', sans-serif; letter-spacing: .3px; }
+
+    /* ── NO RESULT ── */
+    #noResult { display: none; grid-column: span 2; text-align: center; padding: 50px 20px; color: var(--muted); }
+    #noResult p { font-size: 14px; }
+    #noResult button { color: var(--orange); background: none; border: none; margin-top: 10px; font-weight: 700; font-size: 13px; cursor: pointer; }
   </style>
 </head>
 <body>
 
+<!-- Countdown -->
 <div id="countdownBar">
   ⚡ Deal <span id="countdownSlot">--:--</span> bắt đầu sau
-  <div class="digits">
-    <span class="digit" id="cdH">00</span> : <span class="digit" id="cdM">00</span> : <span class="digit" id="cdS">00</span>
-  </div>
+  <span class="digit" id="cdH">00</span>:<span class="digit" id="cdM">00</span>:<span class="digit" id="cdS">00</span>
 </div>
 
+<!-- Header -->
 <header>
   <div class="header-top">
-    <div class="logo">Gia<span>1K</span> 🔥</div>
+    <div class="logo">Sale<span>1K</span> 🔥</div>
     <div class="search-wrap">
       <span class="s-icon">🔍</span>
       <input id="searchInput" type="text" placeholder="Săn gì hôm nay..." oninput="filterDeals()">
     </div>
+    <!-- Zalo group button — đổi href thành link nhóm Zalo của bạn -->
+    <a class="zalo-btn" href="https://zalo.me/g/xxxxxxx" target="_blank" rel="noreferrer" title="Tham gia nhóm Zalo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+    </a>
   </div>
   <div class="filter-row" id="timeFilterRow"></div>
   <div class="filter-row" id="priceFilterRow" style="padding-bottom:10px"></div>
 </header>
 
+<!-- Grid -->
 <div class="grid" id="productGrid"></div>
 
+<!-- No result -->
 <div id="noResult">
   <p>🏜️ Không tìm thấy deal nào!</p>
-  <button onclick="resetFilters()" style="color:var(--orange); background:none; border:none; margin-top:10px; font-weight:bold;">Xoá bộ lọc</button>
+  <button onclick="resetFilters()">Xoá bộ lọc</button>
 </div>
 
 <script>
-let allDeals = [];
+  let allDeals = [];
+  const SALE_SLOTS = [0, 2, 9, 12, 15, 17, 19, 21];
+  let currentTime  = 'all';
+  let currentPrice = 'all';
 
-// Thứ tự chuẩn của các slot trong ngày
-const SALE_SLOTS = [0, 2, 9, 12, 15, 17, 19, 21];
+  // ── Load data ────────────────────────────────────────
+  async function loadDealsData() {
+    try {
+      const res  = await fetch('data.json');
+      const data = await res.json();
 
-let currentTime  = 'all';
-let currentPrice = 'all';
+      allDeals = data.sort((a, b) => {
+        const hA = parseInt(a.time_slot.split(':')[0]);
+        const hB = parseInt(b.time_slot.split(':')[0]);
+        if (hA !== hB) return SALE_SLOTS.indexOf(hA) - SALE_SLOTS.indexOf(hB);
+        return Number(a.price) - Number(b.price);
+      });
 
-async function loadDealsData() {
-  try {
-    const res  = await fetch('data.json');
-    const data = await res.json();
+      // Auto-select slot hiện tại
+      const nowH = new Date().getHours();
+      const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
+      let activeSlot = null;
+      for (const s of SALE_SLOTS) {
+        if (s <= nowH && availableHours.includes(s)) activeSlot = s;
+      }
+      if (activeSlot !== null) {
+        currentTime = activeSlot.toString().padStart(2, '0') + ':00';
+      }
 
-    // Sắp xếp data: theo thứ tự slot → trong cùng slot thì giá thấp lên đầu
-    allDeals = data.sort((a, b) => {
-      const hA = parseInt(a.time_slot.split(':')[0]);
-      const hB = parseInt(b.time_slot.split(':')[0]);
-      if (hA !== hB) return SALE_SLOTS.indexOf(hA) - SALE_SLOTS.indexOf(hB);
-      return Number(a.price) - Number(b.price);
-    });
+      renderFilters();
+      filterDeals();
+      startCountdown();
+    } catch (e) {
+      console.error(e);
+      document.getElementById('productGrid').innerHTML =
+        '<p style="grid-column:span 2;padding:30px;text-align:center;color:red">⚠️ Lỗi tải dữ liệu</p>';
+    }
+  }
 
-    // Tự động active slot hiện tại (slot lớn nhất <= giờ hiện tại)
-    const nowH = new Date().getHours();
+  // ── Render filters ───────────────────────────────────
+  function renderFilters() {
     const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
-    const activeSlot = availableHours
-      .filter(h => SALE_SLOTS.indexOf(h) <= SALE_SLOTS.indexOf(
-        [...SALE_SLOTS].reverse().find(s => s <= nowH) ?? SALE_SLOTS[0]
-      ))
-      .pop();
-    if (activeSlot !== undefined) {
-      currentTime = activeSlot.toString().padStart(2, '0') + ':00';
+
+    // Xoay SALE_SLOTS bắt đầu từ slot hiện tại
+    const nowH = new Date().getHours();
+    let startIdx = 0;
+    for (let i = 0; i < SALE_SLOTS.length; i++) {
+      if (SALE_SLOTS[i] <= nowH) startIdx = i;
     }
+    const rotated     = [...SALE_SLOTS.slice(startIdx), ...SALE_SLOTS.slice(0, startIdx)];
+    const sortedSlots = rotated.filter(h => availableHours.includes(h));
 
-    renderFilters();
-    filterDeals();
-    startCountdown();
-  } catch (e) {
-    console.error(e);
-    document.getElementById('productGrid').innerHTML = '<p style="padding:20px;color:red">Lỗi tải dữ liệu</p>';
+    const timeChips = [
+      { val: 'all', label: '⚡ Tất cả' },
+      ...sortedSlots.map(h => ({ val: h.toString().padStart(2,'0') + ':00', label: '🕐 ' + h.toString().padStart(2,'0') + ':00' }))
+    ];
+    const priceChips = [
+      { val: 'all', label: 'Tất cả'  },
+      { val: '1k',  label: '🔥 1K'   },
+      { val: '9k',  label: '💥 9K'   },
+      { val: '29k', label: '⚡ 29K+' },
+    ];
+
+    document.getElementById('timeFilterRow').innerHTML =
+      '<span class="filter-label">Giờ</span>' +
+      timeChips.map(c =>
+        '<button class="chip ' + (c.val === currentTime ? 'active' : 'inactive') + '" onclick="selectTime(\'' + c.val + '\')">' + c.label + '</button>'
+      ).join('');
+
+    document.getElementById('priceFilterRow').innerHTML =
+      '<span class="filter-label">Giá</span>' +
+      priceChips.map(c =>
+        '<button class="chip ' + (c.val === currentPrice ? 'active' : 'inactive') + '" onclick="selectPrice(\'' + c.val + '\')">' + c.label + '</button>'
+      ).join('');
   }
-}
 
-function renderFilters() {
-  const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
-
-  // Xoay SALE_SLOTS bắt đầu từ slot hiện tại (lớn nhất <= nowH) → vòng tròn đúng thứ tự
-  const nowH = new Date().getHours();
-  let startIdx = 0;
-  for (let i = 0; i < SALE_SLOTS.length; i++) {
-    if (SALE_SLOTS[i] <= nowH) startIdx = i;
+  function selectTime(val)  { currentTime  = val; renderFilters(); filterDeals(); }
+  function selectPrice(val) { currentPrice = val; renderFilters(); filterDeals(); }
+  function resetFilters()   {
+    currentTime = 'all'; currentPrice = 'all';
+    document.getElementById('searchInput').value = '';
+    renderFilters(); filterDeals();
   }
-  const rotated       = [...SALE_SLOTS.slice(startIdx), ...SALE_SLOTS.slice(0, startIdx)];
-  const sortedSlots   = rotated.filter(h => availableHours.includes(h));
 
-  const timeChips = [
-    { val: 'all', label: '⚡ Tất cả' },
-    ...sortedSlots.map(h => {
-      const val = h.toString().padStart(2, '0') + ':00';
-      return { val, label: '🕐 ' + val };
-    })
-  ];
-
-  const priceChips = [
-    { val: 'all', label: 'Tất cả' },
-    { val: '1k',  label: '🔥 1K' },
-    { val: '9k',  label: '💥 9K' },
-    { val: '29k', label: '⚡ 29K+' }
-  ];
-
-  document.getElementById('timeFilterRow').innerHTML =
-    `<span class="filter-label">Giờ</span>` +
-    timeChips.map(c =>
-      `<button class="chip ${c.val === currentTime ? 'active' : 'inactive'}" onclick="selectTime('${c.val}')">${c.label}</button>`
-    ).join('');
-
-  document.getElementById('priceFilterRow').innerHTML =
-    `<span class="filter-label">Giá</span>` +
-    priceChips.map(c =>
-      `<button class="chip ${c.val === currentPrice ? 'active' : 'inactive'}" onclick="selectPrice('${c.val}')">${c.label}</button>`
-    ).join('');
-}
-
-function selectTime(val)  { currentTime  = val; renderFilters(); filterDeals(); }
-function selectPrice(val) { currentPrice = val; renderFilters(); filterDeals(); }
-function resetFilters()   { currentTime = 'all'; currentPrice = 'all'; document.getElementById('searchInput').value = ''; renderFilters(); filterDeals(); }
-
-function filterDeals() {
-  const kw = document.getElementById('searchInput').value.toLowerCase().trim();
-  const filtered = allDeals.filter(d => {
-    const p = Number(d.price);
-    const matchTime  = currentTime === 'all'  || d.time_slot === currentTime;
-    const matchKey   = !kw || d.title.toLowerCase().includes(kw);
-    const matchPrice = currentPrice === 'all' ? true
-                     : currentPrice === '1k'  ? p <= 5000
-                     : currentPrice === '9k'  ? (p > 5000 && p <= 20000)
+  // ── Filter ───────────────────────────────────────────
+  function filterDeals() {
+    const kw = document.getElementById('searchInput').value.toLowerCase().trim();
+    const filtered = allDeals.filter(function(d) {
+      var p = Number(d.price);
+      var matchTime  = currentTime  === 'all' || d.time_slot === currentTime;
+      var matchKey   = !kw || d.title.toLowerCase().includes(kw);
+      var matchPrice = currentPrice === 'all'  ? true
+                     : currentPrice === '1k'   ? p <= 5000
+                     : currentPrice === '9k'   ? (p > 5000 && p <= 15000)
                      : p > 15000;
-    return matchTime && matchKey && matchPrice;
-  });
-  renderGrid(filtered);
-}
-
-function renderGrid(data) {
-  const grid     = document.getElementById('productGrid');
-  const noResult = document.getElementById('noResult');
-  if (!data.length) { grid.innerHTML = ''; noResult.style.display = 'block'; return; }
-  noResult.style.display = 'none';
-
-  grid.innerHTML = data.map(item => {
-    const p      = Number(item.price);
-    const op     = Number(item.original_price || 0);
-    const pct    = item.discount_pct || (op ? Math.round((1 - p / op) * 100) : 0);
-    const qty    = Number(item.quantity);
-    const barPct = Math.min(100, Math.max(10, Math.round((qty / 1000) * 100)));
-
-    return `
-    <div class="card">
-      ${pct > 0 ? `<div class="badge-pct">-${pct}%</div>` : ''}
-      <button class="share-btn" onclick="shareDeal('${item.title.replace(/'/g,"\\'")}','${item.product_link}')">
-        <svg viewBox="0 0 24 24"><path d="M15 8l4 4-4 4"></path><path d="M5 20v-5a7 7 0 0 1 7-7h7"></path></svg>
-      </button>
-      <a href="${item.product_link}" target="_blank" style="text-decoration:none; color:inherit;">
-        <div class="img-wrap">
-          <img src="${item.image_url}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=No+Image'">
-          <div class="time-badge">🕐 ${item.time_slot}</div>
-        </div>
-        <div class="card-body">
-          <div class="card-title">${item.title.toLowerCase()}</div>
-          <div class="price-row">
-            <span class="price-now">${p.toLocaleString('vi-VN')}</span>
-            <span style="color:var(--orange); font-size:11px; font-weight:bold;">đ</span>
-            ${op > p ? `<span class="price-orig">${op.toLocaleString('vi-VN')}đ</span>` : ''}
-          </div>
-          <div class="stock-bar-wrap"><div class="stock-bar" style="width:${barPct}%"></div></div>
-          <div style="font-size:9px; color:var(--muted); margin-top:5px; font-weight:600;">Còn lại: ${qty}</div>
-          <div class="buy-btn">MUA NGAY</div>
-        </div>
-      </a>
-    </div>`;
-  }).join('');
-}
-
-async function shareDeal(title, url) {
-  try {
-    if (navigator.share) await navigator.share({ title: 'Sale 1K', text: title, url });
-    else { await navigator.clipboard.writeText(url); alert('Đã copy link!'); }
-  } catch (e) {}
-}
-
-function startCountdown() {
-  function tick() {
-    const now  = new Date();
-    const nowH = now.getHours(), nowM = now.getMinutes(), nowS = now.getSeconds();
-
-    // Tìm slot tiếp theo chưa bắt đầu (> giờ hiện tại)
-    let targetH    = SALE_SLOTS[0];
-    let dayOffset  = 1; // mặc định ngày mai nếu không tìm thấy
-    for (const sh of SALE_SLOTS) {
-      if (sh > nowH) { targetH = sh; dayOffset = 0; break; }
-    }
-
-    let diff = (targetH - nowH) * 3600 - nowM * 60 - nowS;
-    if (dayOffset) diff += 24 * 3600;
-
-    document.getElementById('countdownSlot').textContent = targetH.toString().padStart(2, '0') + ':00';
-    document.getElementById('cdH').textContent = Math.floor(diff / 3600).toString().padStart(2, '0');
-    document.getElementById('cdM').textContent = Math.floor((diff % 3600) / 60).toString().padStart(2, '0');
-    document.getElementById('cdS').textContent = (diff % 60).toString().padStart(2, '0');
+      return matchTime && matchKey && matchPrice;
+    });
+    renderGrid(filtered);
   }
-  setInterval(tick, 1000);
-  tick();
-}
 
-window.onload = loadDealsData;
+  // ── Render grid ──────────────────────────────────────
+  function renderGrid(data) {
+    var grid     = document.getElementById('productGrid');
+    var noResult = document.getElementById('noResult');
+    if (!data.length) {
+      grid.innerHTML = '';
+      noResult.style.display = 'block';
+      return;
+    }
+    noResult.style.display = 'none';
+
+    grid.innerHTML = data.map(function(item) {
+      var p      = Number(item.price);
+      var op     = Number(item.original_price || 0);
+      var pct    = item.discount_pct || (op && op > p ? Math.round((1 - p / op) * 100) : 0);
+      var qty    = Number(item.quantity);
+      var barPct = Math.min(100, Math.max(8, Math.round((qty / 1000) * 100)));
+      var title  = item.title.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+
+      return '<div class="card">'
+        + (pct > 0 ? '<div class="badge-pct">-' + pct + '%</div>' : '')
+        + '<button class="share-btn" onclick="shareDeal(\''+title+'\',\''+item.product_link+'\')" title="Chia sẻ">'
+        +   '<svg width="14" height="14" viewBox="0 0 24 24" fill="none">'
+        +     '<circle cx="18" cy="5" r="3" fill="var(--orange)"/>'
+        +     '<circle cx="6" cy="12" r="3" fill="var(--orange)"/>'
+        +     '<circle cx="18" cy="19" r="3" fill="var(--orange)"/>'
+        +     '<line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>'
+        +     '<line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>'
+        +   '</svg>'
+        + '</button>'
+        + '<a href="' + item.product_link + '" target="_blank" rel="noreferrer" style="text-decoration:none;color:inherit;display:contents">'
+        +   '<div class="img-wrap">'
+        +     '<img src="' + item.image_url + '" loading="lazy" alt="' + title + '" onerror="this.src=\'https://placehold.co/400x400?text=No+Image\'">'
+        +     '<div class="time-badge">🕐 ' + item.time_slot + '</div>'
+        +   '</div>'
+        +   '<div class="card-body">'
+        +     '<div class="card-title">' + item.title.toLowerCase() + '</div>'
+        +     '<div class="price-row">'
+        +       '<span class="price-now">' + p.toLocaleString('vi-VN') + '</span>'
+        +       '<span class="price-unit">đ</span>'
+        +       (op > p ? '<span class="price-orig">' + op.toLocaleString('vi-VN') + 'đ</span>' : '')
+        +     '</div>'
+        +     '<div class="stock-bar-wrap"><div class="stock-bar" style="width:' + barPct + '%"></div></div>'
+        +     '<div class="stock-label">Còn lại: ' + qty + '</div>'
+        +     '<div class="buy-btn">MUA NGAY</div>'
+        +   '</div>'
+        + '</a>'
+        + '</div>';
+    }).join('');
+  }
+
+  // ── Share ────────────────────────────────────────────
+  async function shareDeal(title, url) {
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'Sale 1K', text: title, url: url });
+      } else {
+        await navigator.clipboard.writeText(url);
+        alert('Đã copy link!');
+      }
+    } catch (e) {}
+  }
+
+  // ── Countdown ────────────────────────────────────────
+  function startCountdown() {
+    function tick() {
+      var now  = new Date();
+      var nowH = now.getHours(), nowM = now.getMinutes(), nowS = now.getSeconds();
+      var targetH   = SALE_SLOTS[0];
+      var dayOffset = 1;
+      for (var i = 0; i < SALE_SLOTS.length; i++) {
+        if (SALE_SLOTS[i] > nowH) { targetH = SALE_SLOTS[i]; dayOffset = 0; break; }
+      }
+      var diff = (targetH - nowH) * 3600 - nowM * 60 - nowS;
+      if (dayOffset) diff += 86400;
+      document.getElementById('countdownSlot').textContent = targetH.toString().padStart(2,'0') + ':00';
+      document.getElementById('cdH').textContent = Math.floor(diff / 3600).toString().padStart(2,'0');
+      document.getElementById('cdM').textContent = Math.floor((diff % 3600) / 60).toString().padStart(2,'0');
+      document.getElementById('cdS').textContent = (diff % 60).toString().padStart(2,'0');
+    }
+    setInterval(tick, 1000);
+    tick();
+  }
+
+  window.onload = loadDealsData;
 </script>
 </body>
 </html>
