@@ -33,18 +33,20 @@
     .search-wrap input { width: 100%; padding: 8px 10px 8px 32px; border-radius: 10px; border: none; outline: none; background: rgba(255,255,255,.95); font-family: inherit; font-size: 13px; }
     .search-wrap .s-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; pointer-events: none; }
 
-    /* Zalo button */
-    .zalo-btn {
-      flex-shrink: 0;
-      width: 34px; height: 34px; border-radius: 50%;
-      background: #fff;
+    /* Zalo Floating Button - Đặt cố định góc dưới */
+    .zalo-float {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      width: 50px; height: 50px;
+      background: #0084ff;
+      border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.2);
-      text-decoration: none;
-      transition: transform .15s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: transform 0.2s;
     }
-    .zalo-btn:active { transform: scale(.88); }
-    .zalo-btn img { width: 22px; height: 22px; object-fit: contain; border-radius: 4px; }
+    .zalo-float:active { transform: scale(0.9); }
+    .zalo-float img { width: 30px; height: 30px; }
 
     /* ── FILTER TABS ── */
     .filter-row { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 0 12px 8px; scrollbar-width: none; }
@@ -56,24 +58,17 @@
 
     /* ── GRID ── */
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 8px 80px; }
-
-    /* ── CARD ── */
     .card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
-
     .badge-pct { position: absolute; top: 7px; left: 7px; z-index: 3; background: var(--red); color: #fff; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; font-family: 'Nunito', sans-serif; }
 
     /* Share button */
     .share-btn {
       position: absolute; top: 7px; right: 7px; z-index: 10;
       width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(4px);
-      border: none; cursor: pointer;
+      background: rgba(255,255,255,.92); border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,.15);
-      transition: transform .15s;
     }
-    .share-btn:active { transform: scale(.88); }
 
     .img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #eee; }
     .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -89,24 +84,19 @@
     .stock-bar-wrap { margin-top: 8px; height: 5px; background: #eee; border-radius: 10px; overflow: hidden; }
     .stock-bar { height: 100%; background: linear-gradient(90deg, #ff8a65, #f44336); border-radius: 10px; }
     .stock-label { font-size: 9px; color: var(--muted); margin-top: 4px; font-weight: 600; }
+    .buy-btn { display: block; margin-top: 10px; background: linear-gradient(90deg, var(--orange), #ff8f00); color: #fff; text-align: center; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: 800; text-decoration: none; font-family: 'Nunito', sans-serif; }
 
-    .buy-btn { display: block; margin-top: 10px; background: linear-gradient(90deg, var(--orange), #ff8f00); color: #fff; text-align: center; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: 800; text-decoration: none; font-family: 'Nunito', sans-serif; letter-spacing: .3px; }
-
-    /* ── NO RESULT ── */
     #noResult { display: none; grid-column: span 2; text-align: center; padding: 50px 20px; color: var(--muted); }
-    #noResult p { font-size: 14px; }
-    #noResult button { color: var(--orange); background: none; border: none; margin-top: 10px; font-weight: 700; font-size: 13px; cursor: pointer; }
+    #noResult button { color: var(--orange); background: none; border: none; margin-top: 10px; font-weight: 700; cursor: pointer; }
   </style>
 </head>
 <body>
 
-<!-- Countdown -->
 <div id="countdownBar">
   ⚡ Deal <span id="countdownSlot">--:--</span> bắt đầu sau
   <span class="digit" id="cdH">00</span>:<span class="digit" id="cdM">00</span>:<span class="digit" id="cdS">00</span>
 </div>
 
-<!-- Header -->
 <header>
   <div class="header-top">
     <div class="logo">Sale<span>1K</span> 🔥</div>
@@ -114,23 +104,21 @@
       <span class="s-icon">🔍</span>
       <input id="searchInput" type="text" placeholder="Săn gì hôm nay..." oninput="filterDeals()">
     </div>
-    <!-- Zalo group button — đổi href thành link nhóm Zalo của bạn -->
-    <a class="zalo-btn" href="https://zalo.me/g/xxxxxxx" target="_blank" rel="noreferrer" title="Tham gia nhóm Zalo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
-    </a>
   </div>
   <div class="filter-row" id="timeFilterRow"></div>
   <div class="filter-row" id="priceFilterRow" style="padding-bottom:10px"></div>
 </header>
 
-<!-- Grid -->
 <div class="grid" id="productGrid"></div>
 
-<!-- No result -->
 <div id="noResult">
   <p>🏜️ Không tìm thấy deal nào!</p>
   <button onclick="resetFilters()">Xoá bộ lọc</button>
 </div>
+
+<a class="zalo-float" href="https://zalo.me/g/en98hvdrfgsv1qs0jqij" target="_blank" rel="noreferrer">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+</a>
 
 <script>
   let allDeals = [];
@@ -138,12 +126,10 @@
   let currentTime  = 'all';
   let currentPrice = 'all';
 
-  // ── Load data ────────────────────────────────────────
   async function loadDealsData() {
     try {
       const res  = await fetch('data.json');
       const data = await res.json();
-
       allDeals = data.sort((a, b) => {
         const hA = parseInt(a.time_slot.split(':')[0]);
         const hB = parseInt(b.time_slot.split(':')[0]);
@@ -151,48 +137,50 @@
         return Number(a.price) - Number(b.price);
       });
 
-      // Auto-select slot hiện tại
+      // Auto-select slot hiện tại hoặc slot tiếp theo
       const nowH = new Date().getHours();
       const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
-      let activeSlot = null;
+      let activeSlot = 'all';
+      
+      // Tìm slot đầu tiên chưa kết thúc
       for (const s of SALE_SLOTS) {
-        if (s <= nowH && availableHours.includes(s)) activeSlot = s;
+        if (s >= nowH && availableHours.includes(s)) {
+          activeSlot = s.toString().padStart(2, '0') + ':00';
+          break;
+        }
       }
-      if (activeSlot !== null) {
-        currentTime = activeSlot.toString().padStart(2, '0') + ':00';
-      }
+      currentTime = activeSlot;
 
       renderFilters();
       filterDeals();
       startCountdown();
     } catch (e) {
       console.error(e);
-      document.getElementById('productGrid').innerHTML =
-        '<p style="grid-column:span 2;padding:30px;text-align:center;color:red">⚠️ Lỗi tải dữ liệu</p>';
     }
   }
 
-  // ── Render filters ───────────────────────────────────
   function renderFilters() {
+    const nowH = new Date().getHours();
     const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
 
-    // Xoay SALE_SLOTS bắt đầu từ slot hiện tại
-    const nowH = new Date().getHours();
-    let startIdx = 0;
-    for (let i = 0; i < SALE_SLOTS.length; i++) {
-      if (SALE_SLOTS[i] <= nowH) startIdx = i;
+    // LOẠI BỎ KHUNG GIỜ ĐÃ QUA
+    // Giữ lại các slot có giờ >= giờ hiện tại HOẶC các slot của ngày mai (nếu đã qua hết slot hôm nay)
+    let filteredSlots = SALE_SLOTS.filter(s => s >= nowH && availableHours.includes(s));
+    
+    // Nếu trong ngày hôm nay đã hết slot, ta lấy các slot sớm nhất của ngày mai từ data
+    if (filteredSlots.length === 0) {
+        filteredSlots = SALE_SLOTS.filter(s => availableHours.includes(s));
     }
-    const rotated     = [...SALE_SLOTS.slice(startIdx), ...SALE_SLOTS.slice(0, startIdx)];
-    const sortedSlots = rotated.filter(h => availableHours.includes(h));
 
     const timeChips = [
       { val: 'all', label: '⚡ Tất cả' },
-      ...sortedSlots.map(h => ({ val: h.toString().padStart(2,'0') + ':00', label: '🕐 ' + h.toString().padStart(2,'0') + ':00' }))
+      ...filteredSlots.map(h => ({ val: h.toString().padStart(2,'0') + ':00', label: '🕐 ' + h.toString().padStart(2,'0') + ':00' }))
     ];
+
     const priceChips = [
-      { val: 'all', label: 'Tất cả'  },
-      { val: '1k',  label: '🔥 1K'   },
-      { val: '9k',  label: '💥 9K'   },
+      { val: 'all', label: 'Tất cả' },
+      { val: '1k',  label: '🔥 1K' },
+      { val: '9k',  label: '💥 9K' },
       { val: '29k', label: '⚡ 29K+' },
     ];
 
@@ -217,104 +205,72 @@
     renderFilters(); filterDeals();
   }
 
-  // ── Filter ───────────────────────────────────────────
   function filterDeals() {
     const kw = document.getElementById('searchInput').value.toLowerCase().trim();
-    const filtered = allDeals.filter(function(d) {
-      var p = Number(d.price);
-      var matchTime  = currentTime  === 'all' || d.time_slot === currentTime;
-      var matchKey   = !kw || d.title.toLowerCase().includes(kw);
-      var matchPrice = currentPrice === 'all'  ? true
-                     : currentPrice === '1k'   ? p <= 5000
-                     : currentPrice === '9k'   ? (p > 5000 && p <= 15000)
-                     : p > 15000;
+    const filtered = allDeals.filter(d => {
+      const p = Number(d.price);
+      const matchTime  = currentTime  === 'all' || d.time_slot === currentTime;
+      const matchKey   = !kw || d.title.toLowerCase().includes(kw);
+      const matchPrice = currentPrice === 'all' ? true : currentPrice === '1k' ? p <= 5000 : currentPrice === '9k' ? (p > 5000 && p <= 15000) : p > 15000;
       return matchTime && matchKey && matchPrice;
     });
     renderGrid(filtered);
   }
 
-  // ── Render grid ──────────────────────────────────────
   function renderGrid(data) {
-    var grid     = document.getElementById('productGrid');
-    var noResult = document.getElementById('noResult');
-    if (!data.length) {
-      grid.innerHTML = '';
-      noResult.style.display = 'block';
-      return;
-    }
+    const grid = document.getElementById('productGrid');
+    const noResult = document.getElementById('noResult');
+    if (!data.length) { grid.innerHTML = ''; noResult.style.display = 'block'; return; }
     noResult.style.display = 'none';
 
-    grid.innerHTML = data.map(function(item) {
-      var p      = Number(item.price);
-      var op     = Number(item.original_price || 0);
-      var pct    = item.discount_pct || (op && op > p ? Math.round((1 - p / op) * 100) : 0);
-      var qty    = Number(item.quantity);
-      var barPct = Math.min(100, Math.max(8, Math.round((qty / 1000) * 100)));
-      var title  = item.title.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+    grid.innerHTML = data.map(item => {
+      const p = Number(item.price), op = Number(item.original_price || 0), qty = Number(item.quantity);
+      const pct = item.discount_pct || (op && op > p ? Math.round((1 - p / op) * 100) : 0);
+      const barPct = Math.min(100, Math.max(8, Math.round((qty / 1000) * 100)));
+      const title = item.title.replace(/'/g, "&#39;").replace(/"/g, "&quot;");
 
-      return '<div class="card">'
-        + (pct > 0 ? '<div class="badge-pct">-' + pct + '%</div>' : '')
-        + '<button class="share-btn" onclick="shareDeal(\''+title+'\',\''+item.product_link+'\')" title="Chia sẻ">'
-        +   '<svg width="14" height="14" viewBox="0 0 24 24" fill="none">'
-        +     '<circle cx="18" cy="5" r="3" fill="var(--orange)"/>'
-        +     '<circle cx="6" cy="12" r="3" fill="var(--orange)"/>'
-        +     '<circle cx="18" cy="19" r="3" fill="var(--orange)"/>'
-        +     '<line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>'
-        +     '<line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>'
-        +   '</svg>'
-        + '</button>'
-        + '<a href="' + item.product_link + '" target="_blank" rel="noreferrer" style="text-decoration:none;color:inherit;display:contents">'
-        +   '<div class="img-wrap">'
-        +     '<img src="' + item.image_url + '" loading="lazy" alt="' + title + '" onerror="this.src=\'https://placehold.co/400x400?text=No+Image\'">'
-        +     '<div class="time-badge">🕐 ' + item.time_slot + '</div>'
-        +   '</div>'
-        +   '<div class="card-body">'
-        +     '<div class="card-title">' + item.title.toLowerCase() + '</div>'
-        +     '<div class="price-row">'
-        +       '<span class="price-now">' + p.toLocaleString('vi-VN') + '</span>'
-        +       '<span class="price-unit">đ</span>'
-        +       (op > p ? '<span class="price-orig">' + op.toLocaleString('vi-VN') + 'đ</span>' : '')
-        +     '</div>'
-        +     '<div class="stock-bar-wrap"><div class="stock-bar" style="width:' + barPct + '%"></div></div>'
-        +     '<div class="stock-label">Còn lại: ' + qty + '</div>'
-        +     '<div class="buy-btn">MUA NGAY</div>'
-        +   '</div>'
-        + '</a>'
-        + '</div>';
+      return `<div class="card">
+        ${pct > 0 ? `<div class="badge-pct">-${pct}%</div>` : ''}
+        <button class="share-btn" onclick="shareDeal('${title}','${item.product_link}')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <circle cx="18" cy="5" r="3" fill="var(--orange)"/><circle cx="6" cy="12" r="3" fill="var(--orange)"/><circle cx="18" cy="19" r="3" fill="var(--orange)"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a href="${item.product_link}" target="_blank" rel="noreferrer" style="text-decoration:none;color:inherit;display:contents">
+          <div class="img-wrap"><img src="${item.image_url}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=No+Image'"><div class="time-badge">🕐 ${item.time_slot}</div></div>
+          <div class="card-body">
+            <div class="card-title">${item.title.toLowerCase()}</div>
+            <div class="price-row"><span class="price-now">${p.toLocaleString('vi-VN')}</span><span class="price-unit">đ</span>${op > p ? `<span class="price-orig">${op.toLocaleString('vi-VN')}đ</span>` : ''}</div>
+            <div class="stock-bar-wrap"><div class="stock-bar" style="width:${barPct}%"></div></div>
+            <div class="stock-label">Còn lại: ${qty}</div>
+            <div class="buy-btn">MUA NGAY</div>
+          </div>
+        </a></div>`;
     }).join('');
   }
 
-  // ── Share ────────────────────────────────────────────
   async function shareDeal(title, url) {
     try {
-      if (navigator.share) {
-        await navigator.share({ title: 'Sale 1K', text: title, url: url });
-      } else {
-        await navigator.clipboard.writeText(url);
-        alert('Đã copy link!');
-      }
+      if (navigator.share) { await navigator.share({ title: 'Sale 1K', text: title, url: url }); }
+      else { await navigator.clipboard.writeText(url); alert('Đã copy link!'); }
     } catch (e) {}
   }
 
-  // ── Countdown ────────────────────────────────────────
   function startCountdown() {
     function tick() {
-      var now  = new Date();
-      var nowH = now.getHours(), nowM = now.getMinutes(), nowS = now.getSeconds();
-      var targetH   = SALE_SLOTS[0];
-      var dayOffset = 1;
-      for (var i = 0; i < SALE_SLOTS.length; i++) {
-        if (SALE_SLOTS[i] > nowH) { targetH = SALE_SLOTS[i]; dayOffset = 0; break; }
-      }
-      var diff = (targetH - nowH) * 3600 - nowM * 60 - nowS;
+      const now = new Date(), nowH = now.getHours(), nowM = now.getMinutes(), nowS = now.getSeconds();
+      let targetH = SALE_SLOTS[0], dayOffset = 1;
+      for (let s of SALE_SLOTS) { if (s > nowH) { targetH = s; dayOffset = 0; break; } }
+      let diff = (targetH - nowH) * 3600 - nowM * 60 - nowS;
       if (dayOffset) diff += 86400;
       document.getElementById('countdownSlot').textContent = targetH.toString().padStart(2,'0') + ':00';
       document.getElementById('cdH').textContent = Math.floor(diff / 3600).toString().padStart(2,'0');
       document.getElementById('cdM').textContent = Math.floor((diff % 3600) / 60).toString().padStart(2,'0');
       document.getElementById('cdS').textContent = (diff % 60).toString().padStart(2,'0');
     }
-    setInterval(tick, 1000);
-    tick();
+    setInterval(tick, 1000); tick();
   }
 
   window.onload = loadDealsData;
