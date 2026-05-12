@@ -3,178 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deal 1K – Săn Hời Cùng Shopee</title>
+  <title>Sale1K – Săn Deal Shopee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --orange: #ff5722;
-      --orange-dark: #e64a19;
-      --orange-light: #ff8a65;
-      --red: #f44336;
-      --bg: #f5f5f5;
-      --card: #ffffff;
-      --text: #212121;
-      --muted: #9e9e9e;
-      --border: #eeeeee;
+      --orange: #ff5722; --orange-dark: #e64a19; --orange-light: #ff8a65;
+      --red: #f44336; --bg: #f5f5f5; --card: #ffffff; --text: #212121;
+      --muted: #9e9e9e; --border: #eeeeee;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    html { font-size: 14px; }
-    body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; }
 
     /* ── COUNTDOWN ── */
     #countdownBar {
-      background: linear-gradient(90deg, #b71c1c, #e53935);
-      color: #fff;
+      background: linear-gradient(90deg, #b71c1c, #e53935); color: #fff;
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 7px 12px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 12px; font-weight: 800;
-      letter-spacing: .3px;
+      padding: 7px 12px; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800;
     }
-    #countdownBar .digits { display: flex; align-items: center; gap: 3px; }
-    #countdownBar .digit {
-      background: rgba(0,0,0,.3);
-      border-radius: 5px;
-      padding: 2px 7px;
-      font-size: 15px; font-weight: 900;
-      min-width: 28px; text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-    #countdownBar .sep { font-size: 14px; font-weight: 900; opacity: .7; }
+    #countdownBar .digit { background: rgba(0,0,0,.3); border-radius: 5px; padding: 2px 7px; font-size: 15px; font-weight: 900; min-width: 28px; text-align: center; }
     #countdownSlot { color: #ffcc80; font-weight: 900; }
 
     /* ── HEADER ── */
-    header {
-      background: linear-gradient(135deg, var(--orange) 0%, #ff8f00 100%);
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 12px rgba(255,87,34,.35);
-    }
+    header { background: linear-gradient(135deg, var(--orange) 0%, #ff8f00 100%); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(255,87,34,.35); }
     .header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 8px; gap: 8px; }
-    .logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; color: #fff; line-height: 1; flex-shrink: 0; }
+    .logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 18px; color: #fff; }
     .logo span { color: #ffe082; }
-    .updated-at {
-      font-size: 10px; color: rgba(255,255,255,.75); font-weight: 600;
-      background: rgba(0,0,0,.15); border-radius: 6px;
-      padding: 3px 8px; flex-shrink: 0; white-space: nowrap;
-    }
     .search-wrap { position: relative; flex: 1; }
-    .search-wrap input {
-      width: 100%; padding: 8px 10px 8px 32px;
-      border-radius: 10px; border: none;
-      font-size: 12.5px; font-family: 'Be Vietnam Pro', sans-serif;
-      outline: none; background: rgba(255,255,255,.95);
-      color: var(--text);
-    }
-    .search-wrap .s-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; pointer-events: none; }
+    .search-wrap input { width: 100%; padding: 8px 10px 8px 32px; border-radius: 10px; border: none; outline: none; background: rgba(255,255,255,.95); font-family: inherit; }
+    .search-wrap .s-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; }
 
     /* ── FILTER TABS ── */
     .filter-row { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 0 12px 8px; scrollbar-width: none; }
     .filter-row::-webkit-scrollbar { display: none; }
-    .filter-label { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.55); white-space: nowrap; flex-shrink: 0; text-transform: uppercase; letter-spacing: .6px; }
-    .chip {
-      padding: 5px 13px; border-radius: 20px;
-      font-size: 11.5px; font-weight: 700;
-      white-space: nowrap; flex-shrink: 0;
-      cursor: pointer; border: none;
-      transition: all .15s ease;
-      font-family: 'Be Vietnam Pro', sans-serif;
-    }
-    .chip.active   { background: #fff; color: var(--orange); box-shadow: 0 2px 6px rgba(0,0,0,.15); }
-    .chip.inactive { background: rgba(0,0,0,.15); color: rgba(255,255,255,.9); }
-
-    /* ── RESULT COUNT ── */
-    .result-bar { padding: 8px 10px 4px; font-size: 11px; color: var(--muted); font-weight: 500; }
-    .result-bar b { color: var(--orange); }
+    .filter-label { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.7); white-space: nowrap; text-transform: uppercase; }
+    .chip { padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; cursor: pointer; border: none; transition: all .2s; font-family: inherit; }
+    .chip.active { background: #fff; color: var(--orange); box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    .chip.inactive { background: rgba(0,0,0,0.15); color: rgba(255,255,255,0.9); }
 
     /* ── GRID ── */
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 8px 80px; }
-
-    /* ── CARD ── */
-    .card {
-      background: var(--card); border-radius: 14px; overflow: hidden;
-      border: 1px solid var(--border); box-shadow: 0 1px 6px rgba(0,0,0,.06);
-      display: flex; flex-direction: column; position: relative;
-      animation: fadeUp .3s ease both;
-    }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    .badge-pct {
-      position: absolute; top: 7px; left: 7px; z-index: 3;
-      background: var(--red); color: #fff;
-      font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px;
-      font-family: 'Nunito', sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,.2);
-    }
-    .badge-sold-out {
-      position: absolute; inset: 0; z-index: 5;
-      background: rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; border-radius: 14px;
-    }
-    .badge-sold-out span { background: #fff; color: var(--red); font-weight: 900; font-size: 11px; padding: 4px 10px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 8px 80px; }
+    .card { background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
     
-    /* SHARE BUTTON UPDATED */
-    .share-btn {
-      position: absolute; top: 6px; right: 6px; z-index: 10;
-      width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,.95);
-      border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      transition: transform .1s;
-    }
-    .share-btn:active { transform: scale(.85); }
-    .share-btn svg { width: 16px; height: 16px; stroke: var(--orange); stroke-width: 2.5; fill: none; }
+    .badge-pct { position: absolute; top: 7px; left: 7px; z-index: 3; background: var(--red); color: #fff; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+    .share-btn { position: absolute; top: 6px; right: 6px; z-index: 10; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .share-btn svg { width: 15px; height: 15px; stroke: var(--orange); stroke-width: 2.8; fill: none; }
 
-    .img-wrap { position: relative; width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; }
-    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .time-badge {
-      position: absolute; bottom: 6px; left: 6px;
-      background: rgba(0,0,0,.58); color: #fff; font-size: 9.5px; font-weight: 700;
-      padding: 2px 7px; border-radius: 6px; backdrop-filter: blur(4px);
-    }
+    .img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #eee; }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .time-badge { position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.6); color: #fff; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
 
-    .card-body { padding: 8px 8px 0; flex: 1; display: flex; flex-direction: column; }
-    .card-title {
-      font-size: 11.5px; font-weight: 600; color: #333; line-height: 1.45;
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 33px;
-      text-transform: capitalize;
-    }
-
-    .price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; margin-top: 6px; }
-    .price-now { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; color: var(--orange); line-height: 1; }
-    .price-unit { font-size: 11px; font-weight: 700; color: var(--orange); }
-    .price-orig { font-size: 10px; color: var(--muted); text-decoration: line-through; margin-left: 2px; }
-
-    .stock-row { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
-    .stock-label { font-size: 10px; color: var(--muted); font-weight: 500; }
-    .stock-label b { color: var(--text); }
-    .tag { font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 5px; font-family: 'Nunito', sans-serif; }
-    .tag-hot      { background: #fff3e0; color: #e65100; }
-    .tag-low      { background: #fce4ec; color: #c62828; }
-    .tag-normal   { background: #f3f4f6; color: #6b7280; }
-
-    .stock-bar-wrap { margin-top: 5px; height: 5px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
-    .stock-bar { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--orange-light), var(--red)); transition: width .4s ease; }
-
-    .buy-btn {
-      display: block; width: 100%; background: linear-gradient(90deg, var(--orange), #ff8f00);
-      color: #fff; font-size: 11px; font-weight: 800; text-align: center;
-      padding: 9px 6px; margin: 8px 0; border-radius: 10px;
-      text-decoration: none; letter-spacing: .4px; font-family: 'Nunito', sans-serif;
-      box-shadow: 0 3px 8px rgba(255,87,34,.3); transition: opacity .1s;
-    }
-    .buy-btn:active { opacity: .85; }
-
-    #noResult { display: none; grid-column: span 2; text-align: center; padding: 60px 20px; color: var(--muted); }
-    #noResult .emoji { font-size: 48px; margin-bottom: 12px; }
-    #noResult button { margin-top: 12px; color: var(--orange); font-weight: 700; background: none; border: none; cursor: pointer; }
-
-    footer { text-align: center; padding: 20px; font-size: 10.5px; color: var(--muted); line-height: 1.6; }
+    .card-body { padding: 8px; flex: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 11px; font-weight: 600; min-height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-transform: capitalize; color: #444; }
+    .price-row { margin-top: 6px; display: flex; align-items: baseline; gap: 4px; }
+    .price-now { font-size: 18px; font-weight: 900; color: var(--orange); font-family: 'Nunito'; }
+    .price-orig { font-size: 10px; color: var(--muted); text-decoration: line-through; }
     
-    .skeleton { background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; border-radius: 6px; }
-    @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
-    .skel-img { width: 100%; aspect-ratio: 1/1; }
-    .skel-line { height: 11px; margin: 6px 8px 0; }
-    .skel-btn { height: 32px; margin: 8px; border-radius: 10px; }
+    .stock-bar-wrap { margin-top: 8px; height: 5px; background: #eee; border-radius: 10px; overflow: hidden; }
+    .stock-bar { height: 100%; background: linear-gradient(90deg, #ff8a65, #f44336); border-radius: 10px; }
+    
+    .buy-btn { margin-top: 10px; background: linear-gradient(90deg, var(--orange), #ff8f00); color: #fff; text-align: center; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: 800; text-decoration: none; font-family: 'Nunito'; }
+
+    #noResult { display: none; grid-column: span 2; text-align: center; padding: 50px; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -182,85 +72,97 @@
 <div id="countdownBar">
   ⚡ Deal <span id="countdownSlot">--:--</span> bắt đầu sau
   <div class="digits">
-    <span class="digit" id="cdH">00</span>
-    <span class="sep">:</span>
-    <span class="digit" id="cdM">00</span>
-    <span class="sep">:</span>
-    <span class="digit" id="cdS">00</span>
+    <span class="digit" id="cdH">00</span> : <span class="digit" id="cdM">00</span> : <span class="digit" id="cdS">00</span>
   </div>
 </div>
 
 <header>
   <div class="header-top">
-    <div class="logo">Sale<span>1K</span> 🔥</div>
+    <div class="logo">Gia<span>1K</span> 🔥</div>
     <div class="search-wrap">
       <span class="s-icon">🔍</span>
-      <input id="searchInput" type="text" placeholder="Tìm sản phẩm..." oninput="filterDeals()">
+      <input id="searchInput" type="text" placeholder="Săn gì hôm nay..." oninput="filterDeals()">
     </div>
-    <div class="updated-at" id="updatedAt">--:--</div>
   </div>
   <div class="filter-row" id="timeFilterRow"></div>
   <div class="filter-row" id="priceFilterRow" style="padding-bottom:10px"></div>
 </header>
 
-<div class="result-bar" id="resultBar"></div>
-
-<div class="grid" id="productGrid">
-  <div class="card"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-btn"></div></div>
-  <div class="card"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-btn"></div></div>
-</div>
+<div class="grid" id="productGrid"></div>
 
 <div id="noResult">
-  <div class="emoji">🏜️</div>
-  <p>Không tìm thấy deal nào phù hợp!</p>
-  <button onclick="resetFilters()">Xoá bộ lọc</button>
+  <p>🏜️ Không tìm thấy deal nào!</p>
+  <button onclick="resetFilters()" style="color:var(--orange); background:none; border:none; margin-top:10px; font-weight:bold;">Xoá bộ lọc</button>
 </div>
-
-<footer>© 2026 Sale1k – Dữ liệu cập nhật tự động<br>Hệ thống săn deal Shopee giá rẻ</footer>
 
 <script>
 let allDeals = [];
+
+// Thứ tự chuẩn của các slot trong ngày
+const SALE_SLOTS = [0, 2, 9, 12, 15, 17, 19, 21];
+
 let currentTime  = 'all';
 let currentPrice = 'all';
 
 async function loadDealsData() {
   try {
-    const res = await fetch('data.json');
-    if (!res.ok) throw new Error('Không tìm thấy data.json');
+    const res  = await fetch('data.json');
     const data = await res.json();
-    
-    // Sort giá tăng dần
-    allDeals = data.sort((a, b) => Number(a.price) - Number(b.price));
 
-    const now = new Date();
-    document.getElementById('updatedAt').textContent =
-      '🕐 ' + now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+    // Sắp xếp data: theo thứ tự slot → trong cùng slot thì giá thấp lên đầu
+    allDeals = data.sort((a, b) => {
+      const hA = parseInt(a.time_slot.split(':')[0]);
+      const hB = parseInt(b.time_slot.split(':')[0]);
+      if (hA !== hB) return SALE_SLOTS.indexOf(hA) - SALE_SLOTS.indexOf(hB);
+      return Number(a.price) - Number(b.price);
+    });
+
+    // Tự động active slot hiện tại (slot lớn nhất <= giờ hiện tại)
+    const nowH = new Date().getHours();
+    const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
+    const activeSlot = availableHours
+      .filter(h => SALE_SLOTS.indexOf(h) <= SALE_SLOTS.indexOf(
+        [...SALE_SLOTS].reverse().find(s => s <= nowH) ?? SALE_SLOTS[0]
+      ))
+      .pop();
+    if (activeSlot !== undefined) {
+      currentTime = activeSlot.toString().padStart(2, '0') + ':00';
+    }
 
     renderFilters();
     filterDeals();
     startCountdown();
   } catch (e) {
     console.error(e);
-    document.getElementById('productGrid').innerHTML = `
-      <div style="grid-column:span 2;text-align:center;padding:40px 20px;color:#ef4444;background:#fff;border-radius:12px;margin:8px;border:1px solid #fee2e2">
-        <p style="font-weight:700">⚠️ Lỗi tải dữ liệu</p>
-        <p style="font-size:11px;margin-top:6px;color:#9ca3af">Vui lòng kiểm tra file data.json hoặc chạy qua Server</p>
-      </div>`;
+    document.getElementById('productGrid').innerHTML = '<p style="padding:20px;color:red">Lỗi tải dữ liệu</p>';
   }
 }
 
 function renderFilters() {
-  const slots = [...new Set(allDeals.map(d => d.time_slot))].sort();
+  const availableHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0])))];
+
+  // Xoay SALE_SLOTS bắt đầu từ slot hiện tại (lớn nhất <= nowH) → vòng tròn đúng thứ tự
+  const nowH = new Date().getHours();
+  let startIdx = 0;
+  for (let i = 0; i < SALE_SLOTS.length; i++) {
+    if (SALE_SLOTS[i] <= nowH) startIdx = i;
+  }
+  const rotated       = [...SALE_SLOTS.slice(startIdx), ...SALE_SLOTS.slice(0, startIdx)];
+  const sortedSlots   = rotated.filter(h => availableHours.includes(h));
 
   const timeChips = [
     { val: 'all', label: '⚡ Tất cả' },
-    ...slots.map(s => ({ val: s, label: '🕐 ' + s }))
+    ...sortedSlots.map(h => {
+      const val = h.toString().padStart(2, '0') + ':00';
+      return { val, label: '🕐 ' + val };
+    })
   ];
+
   const priceChips = [
-    { val: 'all', label: 'Mọi giá' },
-    { val: '1k',  label: '🔥 Deal 1K' },
-    { val: '9k',  label: '💥 Deal 9K' },
-    { val: '29k', label: '💥 Deal 29K+' },
+    { val: 'all', label: 'Tất cả' },
+    { val: '1k',  label: '🔥 1K' },
+    { val: '9k',  label: '💥 9K' },
+    { val: '29k', label: '⚡ 29K+' }
   ];
 
   document.getElementById('timeFilterRow').innerHTML =
@@ -276,13 +178,9 @@ function renderFilters() {
     ).join('');
 }
 
-function selectTime(val) { currentTime = val; renderFilters(); filterDeals(); }
+function selectTime(val)  { currentTime  = val; renderFilters(); filterDeals(); }
 function selectPrice(val) { currentPrice = val; renderFilters(); filterDeals(); }
-function resetFilters() {
-  currentTime = 'all'; currentPrice = 'all';
-  document.getElementById('searchInput').value = '';
-  renderFilters(); filterDeals();
-}
+function resetFilters()   { currentTime = 'all'; currentPrice = 'all'; document.getElementById('searchInput').value = ''; renderFilters(); filterDeals(); }
 
 function filterDeals() {
   const kw = document.getElementById('searchInput').value.toLowerCase().trim();
@@ -290,81 +188,50 @@ function filterDeals() {
     const p = Number(d.price);
     const matchTime  = currentTime === 'all'  || d.time_slot === currentTime;
     const matchKey   = !kw || d.title.toLowerCase().includes(kw);
-    const matchPrice =
-      currentPrice === 'all' ? true :
-      currentPrice === '1k'  ? p <= 5000 :
-      currentPrice === '9k'  ? p > 5000 && p <= 15000 :
-      currentPrice === '29k' ? p > 15000 : false;
+    const matchPrice = currentPrice === 'all' ? true
+                     : currentPrice === '1k'  ? p <= 5000
+                     : currentPrice === '9k'  ? (p > 5000 && p <= 20000)
+                     : p > 15000;
     return matchTime && matchKey && matchPrice;
   });
-
-  document.getElementById('resultBar').innerHTML =
-    `Tìm thấy <b>${filtered.length}</b> deal${filtered.length !== allDeals.length ? ` / ${allDeals.length}` : ''}`;
-
   renderGrid(filtered);
 }
 
 function renderGrid(data) {
-  const grid = document.getElementById('productGrid');
+  const grid     = document.getElementById('productGrid');
   const noResult = document.getElementById('noResult');
-
-  if (!data.length) {
-    grid.innerHTML = '';
-    noResult.style.display = 'block';
-    return;
-  }
+  if (!data.length) { grid.innerHTML = ''; noResult.style.display = 'block'; return; }
   noResult.style.display = 'none';
 
-  grid.innerHTML = data.map((item, i) => {
-    const price    = Number(item.price);
-    const oldPrice = Number(item.original_price || 0);
-    const pctOff   = item.discount_pct || (oldPrice ? Math.round((1 - price / oldPrice) * 100) : 0);
-    const qty      = Number(item.quantity);
-    
-    // Logic stock bar dựa trên số lượng còn lại (giả định max 1000)
-    const maxReference = 1000;
-    const barPct = Math.min(100, Math.max(8, Math.round((qty / maxReference) * 100)));
-
-    let tagClass = 'tag-normal', tagLabel = 'Deal hời';
-    if (qty === 0)      { tagClass = 'tag-low'; tagLabel = 'Hết hàng'; }
-    else if (qty <= 10) { tagClass = 'tag-low'; tagLabel = '🚨 Sắp hết'; }
-    else if (qty > 500) { tagClass = 'tag-hot'; tagLabel = '🔥 Sl lớn'; }
-
-    const titleEsc = item.title.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  grid.innerHTML = data.map(item => {
+    const p      = Number(item.price);
+    const op     = Number(item.original_price || 0);
+    const pct    = item.discount_pct || (op ? Math.round((1 - p / op) * 100) : 0);
+    const qty    = Number(item.quantity);
+    const barPct = Math.min(100, Math.max(10, Math.round((qty / 1000) * 100)));
 
     return `
-    <div class="card" style="animation-delay:${i * 0.03}s">
-      ${qty === 0 ? `<div class="badge-sold-out"><span>HẾT HÀNG</span></div>` : ''}
-      ${pctOff > 0 ? `<div class="badge-pct">-${pctOff}%</div>` : ''}
-      
-      <button class="share-btn" onclick="shareDeal('${titleEsc}','${item.product_link}')">
-        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M15 8l4 4-4 4"></path>
-          <path d="M5 20v-5a7 7 0 0 1 7-7h7"></path>
-        </svg>
+    <div class="card">
+      ${pct > 0 ? `<div class="badge-pct">-${pct}%</div>` : ''}
+      <button class="share-btn" onclick="shareDeal('${item.title.replace(/'/g,"\\'")}','${item.product_link}')">
+        <svg viewBox="0 0 24 24"><path d="M15 8l4 4-4 4"></path><path d="M5 20v-5a7 7 0 0 1 7-7h7"></path></svg>
       </button>
-
-      <a href="${item.product_link}" target="_blank" rel="noreferrer" style="display:contents">
+      <a href="${item.product_link}" target="_blank" style="text-decoration:none; color:inherit;">
         <div class="img-wrap">
-          <img src="${item.image_url}" alt="${titleEsc}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=No+Image'">
+          <img src="${item.image_url}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=No+Image'">
           <div class="time-badge">🕐 ${item.time_slot}</div>
         </div>
         <div class="card-body">
           <div class="card-title">${item.title.toLowerCase()}</div>
           <div class="price-row">
-            <span class="price-now">${price.toLocaleString('vi-VN')}</span>
-            <span class="price-unit">đ</span>
-            ${oldPrice > price ? `<span class="price-orig">${oldPrice.toLocaleString('vi-VN')}đ</span>` : ''}
+            <span class="price-now">${p.toLocaleString('vi-VN')}</span>
+            <span style="color:var(--orange); font-size:11px; font-weight:bold;">đ</span>
+            ${op > p ? `<span class="price-orig">${op.toLocaleString('vi-VN')}đ</span>` : ''}
           </div>
-          <div class="stock-row">
-            <span class="stock-label">Kho: <b>${qty.toLocaleString('vi-VN')}</b></span>
-            <span class="tag ${tagClass}">${tagLabel}</span>
-          </div>
-          <div class="stock-bar-wrap">
-            <div class="stock-bar" style="width:${barPct}%"></div>
-          </div>
+          <div class="stock-bar-wrap"><div class="stock-bar" style="width:${barPct}%"></div></div>
+          <div style="font-size:9px; color:var(--muted); margin-top:5px; font-weight:600;">Còn lại: ${qty}</div>
+          <div class="buy-btn">MUA NGAY</div>
         </div>
-        <div class="buy-btn">⚡ MUA NGAY</div>
       </a>
     </div>`;
   }).join('');
@@ -372,40 +239,33 @@ function renderGrid(data) {
 
 async function shareDeal(title, url) {
   try {
-    if (navigator.share) {
-      await navigator.share({ title: 'Săn Deal 1K Shopee', text: title, url: url });
-    } else {
-      await navigator.clipboard.writeText(url);
-      alert('Đã copy link deal vào bộ nhớ tạm!');
-    }
-  } catch(e) {}
+    if (navigator.share) await navigator.share({ title: 'Sale 1K', text: title, url });
+    else { await navigator.clipboard.writeText(url); alert('Đã copy link!'); }
+  } catch (e) {}
 }
 
 function startCountdown() {
-  const slotHours = [...new Set(allDeals.map(d => parseInt(d.time_slot.split(':')[0], 10)))].sort((a, b) => a - b);
-  if (!slotHours.length) return;
-  const firstSlot = slotHours[0];
-
   function tick() {
-    const now = new Date();
-    const h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
-    let targetH = firstSlot, isTomorrow = true;
+    const now  = new Date();
+    const nowH = now.getHours(), nowM = now.getMinutes(), nowS = now.getSeconds();
 
-    for (const sh of slotHours) {
-      if (sh > h || (sh === h && (m < 59 || s < 59))) {
-        targetH = sh; isTomorrow = false; break;
-      }
+    // Tìm slot tiếp theo chưa bắt đầu (> giờ hiện tại)
+    let targetH    = SALE_SLOTS[0];
+    let dayOffset  = 1; // mặc định ngày mai nếu không tìm thấy
+    for (const sh of SALE_SLOTS) {
+      if (sh > nowH) { targetH = sh; dayOffset = 0; break; }
     }
 
-    let diffSec = (targetH - h) * 3600 - m * 60 - s;
-    if (isTomorrow) diffSec += 24 * 3600;
+    let diff = (targetH - nowH) * 3600 - nowM * 60 - nowS;
+    if (dayOffset) diff += 24 * 3600;
 
-    document.getElementById('countdownSlot').textContent = String(targetH).padStart(2,'0') + ':00';
-    document.getElementById('cdH').textContent = String(Math.floor(diffSec / 3600)).padStart(2,'0');
-    document.getElementById('cdM').textContent = String(Math.floor((diffSec % 3600) / 60)).padStart(2,'0');
-    document.getElementById('cdS').textContent = String(diffSec % 60).padStart(2,'0');
+    document.getElementById('countdownSlot').textContent = targetH.toString().padStart(2, '0') + ':00';
+    document.getElementById('cdH').textContent = Math.floor(diff / 3600).toString().padStart(2, '0');
+    document.getElementById('cdM').textContent = Math.floor((diff % 3600) / 60).toString().padStart(2, '0');
+    document.getElementById('cdS').textContent = (diff % 60).toString().padStart(2, '0');
   }
-  tick(); setInterval(tick, 1000);
+  setInterval(tick, 1000);
+  tick();
 }
 
 window.onload = loadDealsData;

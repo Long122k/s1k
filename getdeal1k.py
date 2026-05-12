@@ -33,51 +33,46 @@ VN_TZ = timezone(timedelta(hours=7))
 # ─────────────────────────────────────────────
 def get_slots_to_fetch() -> list[tuple[int, str]]:
     """
-    Trả về list [(timestamp_utc, label)] cho 2 khung giờ:
-      - Slot hiện tại  : slot lớn nhất <= giờ hiện tại
-      - Slot tiếp theo : slot nhỏ nhất >  giờ hiện tại
+    Trả về list [(timestamp_utc, label)] cho 4 khung giờ:
+      - Slot hiện tại      : slot lớn nhất <= giờ hiện tại
+      - Slot tiếp theo x3  : 3 slot kế tiếp sau đó
 
     Ví dụ 10:20 với SALE_SLOTS=[0,2,9,12,15,17,19,21]:
-      → [(ts_9h, "09:00"), (ts_12h, "12:00")]
+      → [09:00, 12:00, 15:00, 17:00]
     """
     now_vn       = datetime.now(VN_TZ)
     current_hour = now_vn.hour
 
-    current_slot = None
-    next_slot    = None
-
-    for slot in SALE_SLOTS:
+    # Tìm index của slot hiện tại
+    current_idx = None
+    for i, slot in enumerate(SALE_SLOTS):
         if current_hour >= slot:
-            current_slot = slot
+            current_idx = i
         else:
-            if next_slot is None:
-                next_slot = slot
+            break
+
+    # Nếu chưa đến slot đầu tiên trong ngày → lấy slot cuối hôm qua
+    if current_idx is None:
+        current_idx = len(SALE_SLOTS) - 1
+        use_yesterday = True
+    else:
+        use_yesterday = False
 
     result = []
+    for offset in range(4):
+        idx = current_idx + offset
+        # Tính ngày offset (wrap sang ngày hôm sau nếu vượt quá cuối SALE_SLOTS)
+        day_offset = idx // len(SALE_SLOTS)
+        slot_hour  = SALE_SLOTS[idx % len(SALE_SLOTS)]
 
-    # Slot hiện tại (có thể là slot cuối hôm qua nếu trước 0h)
-    if current_slot is not None:
-        slot_dt = now_vn.replace(hour=current_slot, minute=0, second=0, microsecond=0)
-    else:
-        # Trước 0h → slot cuối ngày hôm qua
-        yesterday   = now_vn - timedelta(days=1)
-        current_slot = SALE_SLOTS[-1]
-        slot_dt     = yesterday.replace(hour=current_slot, minute=0, second=0, microsecond=0)
+        if use_yesterday:
+            base_day = now_vn - timedelta(days=1) + timedelta(days=day_offset)
+        else:
+            base_day = now_vn + timedelta(days=day_offset)
 
-    ts    = int(slot_dt.astimezone(timezone.utc).timestamp())
-    result.append((ts, f"{current_slot:02d}:00"))
-
-    # Slot tiếp theo (có thể là slot đầu ngày mai nếu đã qua slot cuối)
-    if next_slot is not None:
-        slot_dt = now_vn.replace(hour=next_slot, minute=0, second=0, microsecond=0)
-    else:
-        # Đã qua slot cuối cùng → slot đầu tiên ngày mai
-        tomorrow = now_vn + timedelta(days=1)
-        next_slot = SALE_SLOTS[0]
-        slot_dt   = tomorrow.replace(hour=next_slot, minute=0, second=0, microsecond=0)
-
-    ts = int(slot_dt.astimezone(timezone.utc).timestamp())
-    result.append((ts, f"{next_slot:02d}:00"))
+        slot_dt = base_day.replace(hour=slot_hour, minute=0, second=0, microsecond=0)
+        ts      = int(slot_dt.astimezone(timezone.utc).timestamp())
+        result.append((ts, f"{slot_hour:02d}:00"))
 
     return result
 
