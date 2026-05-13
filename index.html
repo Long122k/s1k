@@ -99,7 +99,7 @@
 
 <header>
   <div class="header-top">
-    <div class="logo">Sale<span>1K</span> 🔥</div>
+    <div class="logo">Gia<span>1K</span> 🔥</div>
     <div class="search-wrap">
       <span class="s-icon">🔍</span>
       <input id="searchInput" type="text" placeholder="Săn gì hôm nay..." oninput="filterDeals()">
@@ -244,7 +244,7 @@
             <div class="card-title">${item.title.toLowerCase()}</div>
             <div class="price-row"><span class="price-now">${p.toLocaleString('vi-VN')}</span><span class="price-unit">đ</span>${op > p ? `<span class="price-orig">${op.toLocaleString('vi-VN')}đ</span>` : ''}</div>
             <div class="stock-bar-wrap"><div class="stock-bar" style="width:${barPct}%"></div></div>
-            <div class="stock-label">Còn lại: ${qty}</div>
+            <div class="stock-label">Số lượng: ${qty}</div>
             <div class="buy-btn">MUA NGAY</div>
           </div>
         </a></div>`;
@@ -253,7 +253,7 @@
 
   async function shareDeal(title, url) {
     try {
-      if (navigator.share) { await navigator.share({ title: 'Sale 1K', text: title, url: url }); }
+      if (navigator.share) { await navigator.share({ title: 'Gia 1K', text: title, url: url }); }
       else { await navigator.clipboard.writeText(url); alert('Đã copy link!'); }
     } catch (e) {}
   }
