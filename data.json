@@ -1,193 +1,163 @@
 [
   {
+    "title": "[HỎA TỐC] Túi hút chân không đựng quần áo du lịch, chăn màn Deli tránh ẩm mốc siêu dai dày gấp đôi sử dụng nhiều lần",
+    "price": 9000,
+    "original_price": 57000,
+    "discount_pct": 84,
+    "quantity": 25,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqauxq2zgnwt19_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F412567642%2F16323985223&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "Sách - Truyện tranh tiềm thức cho bé - Bản tiếng Việt",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 50,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-moz3lry038y422_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1188422984%2F46011541679&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "Mặt nạ Banobagi dưỡng da bổ sung Vitamin Vita Genic Jelly Mask Giấy Stemcell BANOBAGI dưỡng ẩm 30ml",
+    "price": 9000,
+    "original_price": 39000,
+    "discount_pct": 77,
+    "quantity": 25,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7repe-m283q04yyi9k31_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F352130%2F20381536982&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "Gioăng Cao Su Dán Chân Cửa Chống Gió, Côn Trùng, Cách Âm,Chống Bụi Bẩn, Chống Nước",
+    "price": 9000,
+    "original_price": 32500,
+    "discount_pct": 72,
+    "quantity": 24,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lzhemmm82tnlef_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F27111112%2F11573851810&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "[🔥2K/BÚT] Hộp 50 Bút Bi Bấm Mực Xanh/Đỏ/Đen Ngòi 0.7mm Deli Viết Nét Đều Trơn Tru Học Sinh Văn Phòng",
+    "price": 9000,
+    "original_price": 200000,
+    "discount_pct": 96,
+    "quantity": 37,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqpvn91mh72b16_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021392906%2F50357209751&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "Vít Vá Lốp Xe Máy Ô Tô Công Nghệ Nhật Bản Siêu Nhanh, An Toàn ,Siêu Tiện Lợi Nin198 Shop",
+    "price": 9000,
+    "original_price": 60000,
+    "discount_pct": 85,
+    "quantity": 10,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpb6w069ombv7f_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1608760976%2F42072160545&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "[VOUCHER ĐỘCQUYỀN] Hộp thực phẩm TRỮ ĐÔNG Inochi, chất liệu nhựa PP chịu nhiệt, hộp cấp đông thịt",
+    "price": 9000,
+    "original_price": 39000,
+    "discount_pct": 77,
+    "quantity": 25,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mhpxo7yj3z7k78_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F323821202%2F20295875389&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
     "title": "TẶNG Miếng Lót mũ bảo hiểm XÁM",
     "price": 9000,
     "original_price": 30000,
     "discount_pct": 70,
     "quantity": 26,
-    "time_slot": "09:00",
+    "time_slot": "15:00",
     "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-ml943yez785kf6_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1325972710%2F41772983506&affiliate_id=17351620126&sub_id=9k091807"
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1325972710%2F41772983506&affiliate_id=17351620126&sub_id=9k151807"
   },
   {
-    "title": "Charm nail, charm hoa nhí , hoa sứ đính móng Phụ Kiện nail",
-    "price": 9000,
-    "original_price": 35000,
-    "discount_pct": 74,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/08f51a60770757ae315c0eeaec2fe38d_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F38609732%2F6595152389&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Túi Đựng Bình Giữ Nhiệt Có Quai Xách Trong Suốt An Toàn Sử Dụng - QHshop",
+    "title": "Tất Cổ Cao Trơn Jussy Official Chất Vải Cotton Co Giãn Thời Trang Hàn Quốc Cho Nam Và Nữ (1 ĐÔI)",
     "price": 9000,
     "original_price": 20000,
     "discount_pct": 55,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rdy2-m0acq072gj6p4f_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F295424357%2F25536140436&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Dao làm bếp Kiwi Thái Lan size 475-477-478-479, dao bếp cán nhựa đen",
-    "price": 9000,
-    "original_price": 33600,
-    "discount_pct": 73,
     "quantity": 25,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-meb63qubu87b98_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F68102401%2F41017776166&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Lót chuột cỡ lớn 80x30 cm loại dày size lớn nhiều mẫu bo viền siêu bền - Anh Kỳ Store",
-    "price": 9000,
-    "original_price": 30000,
-    "discount_pct": 70,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134201-23030-bqkdbdorlvov87_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F966533408%2F23733423390&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Tấm Che Nắng Ô Tô Miếng Xốp Xanh Chắn Nắng Xe Hơi DECAR Rèm Che Nắng Cửa Kính Ô Tô Có Mút Hít Cách Nhiệt, Chống Nóng",
-    "price": 9000,
-    "original_price": 50000,
-    "discount_pct": 82,
-    "quantity": 23,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mlmybb7gs45d7e_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F371400102%2F21015364990&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Pin Maxell 2A sử dụng cho micro hát karaoke, đồng hồ treo tường, remote, chuột máy tính...",
-    "price": 9000,
-    "original_price": 35000,
-    "discount_pct": 74,
-    "quantity": 25,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpit6n7y5xqkc0_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F7661171%2F4121472662&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Set hộp 20 cái dây chun buộc tóc nhiều màu",
-    "price": 9000,
-    "original_price": 30000,
-    "discount_pct": 70,
-    "quantity": 25,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134201-7r98o-lwzptcts9kpffb_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1281824435%2F23790205787&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Ốp Lưng Cho Redmi 13C / POCO C65 Phim Hoạt Hình Silicon Bé Gái Vỏ Điện Thoại Mềm TPU Bi-a Xu Hướng Mắt Thiên Thần Chống Sốc Ốp Lưng",
-    "price": 9000,
-    "original_price": 38000,
-    "discount_pct": 76,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-820mu-mnco8a4fad50b5_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1540262289%2F55109303257&affiliate_id=17351620126&sub_id=9k091807"
-  },
-  {
-    "title": "Combo Cuộn Giấy Lau Đa Năng Lau Bếp Giấy Lau Bếp,Cuộn 50 Tờ Dai Giặt Tái Sử Dụng Họa Tiết Đẹp Tiện Dụng CHUYÊN BÁN LỖ",
-    "price": 9000,
-    "original_price": 30000,
-    "discount_pct": 70,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rbl7-lpjlsquxhftv7d_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1160265072%2F24657391482&affiliate_id=17351620126&sub_id=9k091807"
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lvd57pqcvlal21_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F22431875%2F20876541975&affiliate_id=17351620126&sub_id=9k151807"
   },
   {
     "title": "Ốp Lưng TPU Trơn Chống Sốc Bảo Vệ Camera Dành Cho iPhone /X/XS/XR/11/12/13/14/15/16/Pro/Max",
     "price": 9000,
     "original_price": 20000,
     "discount_pct": 55,
-    "quantity": 1,
-    "time_slot": "09:00",
+    "quantity": 20,
+    "time_slot": "15:00",
     "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-820n4-mnuxgq2u7dvnbd_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1520328585%2F42130599376&affiliate_id=17351620126&sub_id=9k091807"
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1520328585%2F42130599376&affiliate_id=17351620126&sub_id=9k151807"
   },
   {
-    "title": "[Y382] Miếng Dán Kích Mí MLEN DIARY - Tàng Hình, Phù Hợp Mọi Dáng Mắt, Không Lộ Cả Khi Không Makeup",
-    "price": 29000,
-    "original_price": 70000,
-    "discount_pct": 59,
-    "quantity": 20,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mq1suq3kzn64f4_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F32256775%2F57859264035&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "Sách - Bộ sách Cùng Con Học Nói - Dành cho bé từ 1 tuổi",
-    "price": 29000,
-    "original_price": 85000,
-    "discount_pct": 66,
-    "quantity": 40,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lwgx47pno06339_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1188422984%2F27052733985&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "[🔥29K/10 BÚT] Combo 20 Bút Chì Khúc 2B Học Sinh Deli - Chì Đậm Hình Dễ Thương Cho Bé Tập Viết Vẽ Tranh - Mix Màu",
-    "price": 29000,
-    "original_price": 90000,
-    "discount_pct": 68,
-    "quantity": 40,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqpwgmwby03n08_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021392906%2F25972482725&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "Kiều Mạch, Hạt Buckwheat Hữu Cơ Siêu Hạt Eat Clean, Không Gluten, Giàu Protein 500G",
-    "price": 29000,
-    "original_price": 60000,
-    "discount_pct": 52,
-    "quantity": 26,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqd2cd6glibybe_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1165606932%2F25678345131&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "Đất Nặn Tự Khô Màu An Toàn Cho Bé Không Dính Da Tay, Không Mùi - Đất Sét Tạo Hình Tự Khô Siêu Nhẹ",
-    "price": 29000,
-    "original_price": 55000,
-    "discount_pct": 47,
-    "quantity": 20,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mdbyyl66x4kca1_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F295424357%2F43912464366&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "[Outlet S2] Túi đựng mỹ phẩm du lịch Deli chống thấm nước túi đựng đồ trang điểm đồ cá nhân tiện lợi nhỏ gọn",
-    "price": 29000,
-    "original_price": 115200,
-    "discount_pct": 75,
+    "title": "Bộ quần áo ba lỗ chất tăm lạnh MỚI cho bé 5-15kg",
+    "price": 9000,
+    "original_price": 50000,
+    "discount_pct": 82,
     "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqavf7ri8paje0_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F412567642%2F20476946264&affiliate_id=17351620126&sub_id=ot091807"
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mnmkntv685jc6e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F4334263%2F50011286475&affiliate_id=17351620126&sub_id=9k151807"
   },
   {
-    "title": "[VOUCHER ĐỘCQUYỀN] Khay làm đá Inochi Kari, nắp đậy thông minh, nhiều hình, không BPA, làm đá, thạch",
-    "price": 29000,
-    "original_price": 58000,
-    "discount_pct": 50,
-    "quantity": 60,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mhpwn1dnd8n4e9_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F323821202%2F22210655831&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Chai Xịt Thơm Quần Áo HygienC Plus 100ml Tiện Lợi - Hương Hoa Hồng (Xả Vải Dạng Khô)",
+    "price": 9000,
+    "original_price": 35000,
+    "discount_pct": 74,
+    "quantity": 25,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mcoveqd0x3do66_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1378403879%2F40760545333&affiliate_id=17351620126&sub_id=9k151807"
   },
   {
-    "title": "Khay đá silicon có nắp Khay làm đá silicon Kichemo - KLD01",
+    "title": "Cây Lăn Bụi Làm Sạch Quần Áo, Chăn Ga, Đệm Sofa, Thanh Lăn Lông Chó Mèo-Lõi Lăn Bụi Dự Phòng 60 Lớp",
+    "price": 9000,
+    "original_price": 12000,
+    "discount_pct": 18,
+    "quantity": 100,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-824ia-mpv0bbpd651e4d_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1181400240%2F25962536886&affiliate_id=17351620126&sub_id=9k151807"
+  },
+  {
+    "title": "Kính Cường Lực iPhone KK 4D Cao Cấp Full Màn iPhone 6/6s/7/8/Plus/X/XS/XR/11/12/13/14/15/16/17/Pro/Max/Mini/Air",
+    "price": 27900,
+    "original_price": 30000,
+    "discount_pct": 7,
+    "quantity": 950,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zmtw4ti8ucfa_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F89827191%2F2608753400&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Sách - Vietmath_Cùng con giỏi tư duy Toán học 4",
     "price": 29000,
-    "original_price": 84000,
-    "discount_pct": 65,
+    "original_price": 99000,
+    "discount_pct": 71,
     "quantity": 20,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/1ee143ff32eff1e8149ba09b1542c989_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F204107021%2F11832773236&affiliate_id=17351620126&sub_id=ot091807"
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqfwxmia3mrx0c_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F371367657%2F21814535407&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "[GIÁ COMBO]  Hộp 10 Mũi Khoan Xoắn Mini (0.5mm - 3.0mm) - Chuyên Khoan Mạch, Gỗ, Nhựa",
+    "price": 29000,
+    "original_price": 53000,
+    "discount_pct": 45,
+    "quantity": 20,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mld0wv9ztwco88_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F726412530%2F24562283808&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
     "title": "Kính cường lực chống nhìn trộm dành cho iPhone 16 Promax 6/7/8 Plus X/Xs/Xr 11 12 13 14 15 Plus Pro Max - TT CASE",
@@ -195,9 +165,39 @@
     "original_price": 60000,
     "discount_pct": 52,
     "quantity": 5,
-    "time_slot": "09:00",
+    "time_slot": "15:00",
     "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-820oh-mnuxi18nuosl68_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1520328585%2F49059967187&affiliate_id=17351620126&sub_id=ot091807"
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1520328585%2F49059967187&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Combo 5/10/20 Bút Bi Nến Deli Mực Xanh/Đen/Đỏ Ngòi 0.7mm Có Nắp Viết Sổ Vở Không Bị Vón Cục Cho HSSV",
+    "price": 29000,
+    "original_price": 54000,
+    "discount_pct": 46,
+    "quantity": 10,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mfaurda1687f3b_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F348955539%2F42804268725&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Sách: The Power Of Praise - Sức Mạnh Của Sự Khen Ngợi",
+    "price": 29000,
+    "original_price": 110000,
+    "discount_pct": 74,
+    "quantity": 15,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mawu71vm25ef37_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F487037170%2F22345104692&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Sách: Mẹ Kiên Cường, Con Trai Mạnh Mẽ",
+    "price": 29000,
+    "original_price": 170000,
+    "discount_pct": 83,
+    "quantity": 25,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-maezvbaijfyk3d_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F478263048%2F11344046925&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
     "title": "Túi giấy mặt kính đựng hoa quà tặng túi quà, phụ kiện hoa [Size 15x25x35]",
@@ -205,128 +205,908 @@
     "original_price": 61000,
     "discount_pct": 52,
     "quantity": 10,
-    "time_slot": "09:00",
+    "time_slot": "15:00",
     "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lwv2969w6b4rde_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F265094677%2F28903545008&affiliate_id=17351620126&sub_id=ot091807"
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F265094677%2F28903545008&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Nước Giặt Đồ Lót Sinh Học Fuwa3e Combo 2 Chai 500ml Giúp Khử Mùi, Kháng Khuẩn, An toàn Cho Da",
+    "title": "Bộ cộc hè bé trai, vải lanh lụa ( tole) loại 1 size 3-18 kg...",
+    "price": 29000,
+    "original_price": 68000,
+    "discount_pct": 57,
+    "quantity": 42,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lz8t4c1ugiapf9_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F4334263%2F7787506792&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Áo thun thể thao nam, tập gym, chạy bộ, chất thun lạnh tay cộc, cổ tròn co giãn 4 chiều full Size ACV01",
+    "price": 29000,
+    "original_price": 70000,
+    "discount_pct": 59,
+    "quantity": 40,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mplgd836x4pa9c_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1078407420%2F47060603020&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Sách - Pomodoro - Tuyệt Chiêu Quản Trị Thời Gian",
+    "price": 29000,
+    "original_price": 99000,
+    "discount_pct": 71,
+    "quantity": 7,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/e47793956b36ef12e45767ba049dcc1b_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F14390734%2F7720527246&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Chày Dầm Pha Chế Inox, Chày Dầm Hoa Quả, Dụng Cụ Bartender, Đầu Nhựa Cao Cấp, Kích Thước 25cm",
+    "price": 29000,
+    "original_price": 69000,
+    "discount_pct": 58,
+    "quantity": 50,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m7kzxady0mmbaa_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1049170125%2F29780308313&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Túi Thơm Để Tủ Quần Áo Hygiene Thái Lan Hương Hoa Thơm Phòng Treo Xe Phòng Ngủ Loại Bỏ Ẩm Mốc",
     "price": 29000,
     "original_price": 60000,
     "discount_pct": 52,
-    "quantity": 27,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-ls47kw7lvc7ta9_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F214018290%2F24863718929&affiliate_id=17351620126&sub_id=ot091807"
+    "quantity": 75,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mowq5rk0y3v3f1_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F284282956%2F23503214505&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "[Laifarm] Xôt Aji -mayo-130g tuýp",
-    "price": 34930,
-    "original_price": 49900,
-    "discount_pct": 30,
-    "quantity": 5,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpddb60w13im80_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1770723391%2F53712091560&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Chai Đựng Dầu Gội Sữa Tắm Hình Khối Vuông MOMOHOUSE Lọ Đựng Nước Rửa Tay Phòng Tắm Homestay Hotel",
+    "price": 29000,
+    "original_price": 110000,
+    "discount_pct": 74,
+    "quantity": 24,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7qukw-liwve9z2efgy6f_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F123094057%2F23736695231&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "100 Chiếc Núm Vú Bao Miếng Dán Dùng Một Lần Da Vô Hình Không Dệt Miếng Dán Ngực Không Áo Ngực Pasties Miếng Lót Hoa\\ Tròn",
-    "price": 40051,
-    "original_price": 59778,
-    "discount_pct": 33,
-    "quantity": 80,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134301-7rcf8-m6klvhm0whkrff_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F29080657196&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Bộ áo choàng nắng dành cho trẻ em 0-2 tuổi ( Chiều cao dưới 86 cm), chất liệu vải cotton- A10",
+    "price": 29000,
+    "original_price": 79000,
+    "discount_pct": 63,
+    "quantity": 98,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/1fe6db3c8a0fc7ee701f9fb7416a968f_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F122099948%2F3292046320&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Túi giặt chống rách, Túi lưới máy giặt bảo vệ áo ngực cho quần áo tinh tế",
-    "price": 40759,
-    "original_price": 79920,
-    "discount_pct": 49,
-    "quantity": 15,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rdwr-mc7a3sylvmexc3_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F26856569160&affiliate_id=17351620126&sub_id=ot091807"
-  },
-  {
-    "title": "Phấn má hồng nhẹ HERORANGE Sheer | Trang điểm khỏa thân tự nhiên | Bột đường viền mờ | Hoàn thiện nhung bão hòa thấp | Chống thấm nước lâu dài",
-    "price": 44198,
-    "original_price": 107800,
-    "discount_pct": 59,
+    "title": "Bút Sáp Màu 12/24 Màu Deli Sáp Màu An Toàn Màu Sắc Rực Rỡ Tươi Sáng Tập Vẽ Tranh Tô Màu Mỹ Thuật",
+    "price": 29000,
+    "original_price": 57600,
+    "discount_pct": 50,
     "quantity": 20,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rdyx-mc7a4h8wc99of7_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F41700553408&affiliate_id=17351620126&sub_id=ot091807"
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mn2ir1bxof7n87_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F127805122%2F41930901760&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Kính râm bảo vệ thể thao Bảo vệ tia cực tím cổ điển cho nam giới Hoạt động ngoài trời đi xe đạp",
-    "price": 44582,
-    "original_price": 92880,
-    "discount_pct": 52,
-    "quantity": 50,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-823oi-mp4j6vv0kp3g1a_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F29336927825&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Vòng cổ dây chuyền bạc thời trang dành cho nam nữ Hợp kim Hip Hop Trang sức dự tiệc hàng ngày Phụ kiện mặc",
+    "price": 31944,
+    "original_price": 72600,
+    "discount_pct": 56,
+    "quantity": 4,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-823rq-mp4jnxxricr260_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F29470546506&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Bảng Phấn Mắt Lấp Lánh 9 Hình Kim Loại Đậm Punk Khói Mắt Xám Đen Chilly Lady Trang Điểm",
-    "price": 54747,
-    "original_price": 69300,
-    "discount_pct": 21,
-    "quantity": 14,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-823p8-mp4jfcstzkle02_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F25768673885&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Ốp Lưng Iphone Silicon Dẻo Camera Nhám Mờ Nâng Cấp Lên IP 17 11/12/13/14/15/16/17/pro/max/plus/promax - Awifi X5-1",
+    "price": 32000,
+    "original_price": 50000,
+    "discount_pct": 36,
+    "quantity": 283,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mk7vi7aqk3d46b_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F7669738%2F41528533651&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Salorie 4x4 / 5x5cm Tấm điện cực cho hàng chục Máy châm cứu kỹ thuật số Máy mát xa cơ thể Máy kích thích cơ bắp",
-    "price": 60291,
-    "original_price": 69300,
-    "discount_pct": 13,
-    "quantity": 30,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rdy0-mc7b8cbeafym3e_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F25683138356&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Set 50 Món Kẹp Tóc Siêu Cute Phong Cách Hàn Quốc",
+    "price": 35000,
+    "original_price": 50000,
+    "discount_pct": 30,
+    "quantity": 300,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-memcs1p56pl054_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1094864794%2F40718879584&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Y2K Punk Thắt Lưng Hợp Kim Khóa Ngôi Sao Hai Mặt Dây Thắt Lưng Cặp Đôi Dạo Phố Quà Tặng",
-    "price": 66401,
-    "original_price": 86235,
+    "title": "Dao cạo nữ, dao cạo bikini H2C Gentlesilk đầu bơ venus spa 6 lưỡi siêu cao cấp, cạo sạch mịn không rát",
+    "price": 37800,
+    "original_price": 70000,
+    "discount_pct": 46,
+    "quantity": 180,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mhu7tfsxzabqac_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F170164524%2F43908661797&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "[1kg] túi đựng rác có quai, bao rác đen tự phân hủy, túi nilong dựng hàng siêu dai, sire 5kg,10kg,20kg,30kg,50kg",
+    "price": 37840,
+    "original_price": 43000,
+    "discount_pct": 12,
+    "quantity": 80,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-md9oxlm79roc84_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F29936044%2F1987752054&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Cạo Lưỡi Cao Cấp Chuẩn Y Khoa DrKam - Không Gây Buồn Nôn - Làm Sạch Nhẹ Nhàng Khử Hôi Miệng",
+    "price": 39900,
+    "original_price": 70000,
+    "discount_pct": 43,
+    "quantity": 420,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mjz8bfsgk5c525_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1295994548%2F27869057193&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Ốp Lưng iPhone TPU Đệm Nhung Chống bẩn, Bảo Vệ Camera - iP 6/7/8/X/XS/XR/11/12/13/14/15/16/17/Mini/Plus/Pro/Max/Air",
+    "price": 45318,
+    "original_price": 49800,
+    "discount_pct": 9,
+    "quantity": 600,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9zvcez1crh646_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F89827191%2F28309604497&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Combo 12 Hộp 600 Chiếc tăm chỉ Cao Cấp Gumi xỉa răng, Vệ sinh làm sạch răng",
+    "price": 48300,
+    "original_price": 70000,
+    "discount_pct": 31,
+    "quantity": 150,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mplwavd58lji44_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F852834676%2F27134435225&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Chai Xịt Phục Hồi Nhựa Nhám, Đánh Bóng Đồ Da D-Chem 450ml - Dưỡng Bề Mặt Nhựa Nhám Ô Tô Xe Máy",
+    "price": 58800,
+    "original_price": 105000,
+    "discount_pct": 44,
+    "quantity": 20,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mglj0czwrpxn28_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1637284209%2F29592369623&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "200 chiếc khẩu trang Thịnh Phát 5D 3 lớp kháng khuẩn chống bụi mịn chống nắng hiệu quả Cỏ Ba Lá",
+    "price": 66600,
+    "original_price": 90000,
+    "discount_pct": 26,
+    "quantity": 120,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-ls2l7yb309sp14_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1072261475%2F25714585628&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "[100ml Tặng vỏ treo] Tinh Dầu Mộc An Nhiên Xông Thơm Phòng - Khử mùi, thanh lọc không khí...",
+    "price": 92400,
+    "original_price": 120000,
     "discount_pct": 23,
-    "quantity": 25,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134301-8261u-mj9pzypx8xdv4b_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F57654761328&affiliate_id=17351620126&sub_id=ot091807"
+    "quantity": 95,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m68gyn1ghfawa6_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F684726466%2F16127451230&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Dao cạo an toàn 6 lớp Razor Classic cho nam giới và lưỡi dao cạo tẩy lông cho phụ nữ, máy cạo tay.",
-    "price": 69784,
-    "original_price": 134200,
-    "discount_pct": 48,
+    "title": "Chăn Hè Cotton Đũi Hàn Quốc kích thước 1m8x2m mền hè đũi siêu mát lạnh mùa hè",
+    "price": 114000,
+    "original_price": 200000,
+    "discount_pct": 43,
+    "quantity": 2500,
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpxv3uurfqq414_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F120420833%2F17199358548&affiliate_id=17351620126&sub_id=ot151807"
+  },
+  {
+    "title": "Đường ăn kiêng La hán quả Organic Hữu cơ MonkFruit CT Pharma 600 gram",
+    "price": 259560,
+    "original_price": 309000,
+    "discount_pct": 16,
     "quantity": 10,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134301-7rfhp-m9jtzohnenqhea_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F44002393315&affiliate_id=17351620126&sub_id=ot091807"
+    "time_slot": "15:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mgrp838h70ne09_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F322679405%2F18383322222&affiliate_id=17351620126&sub_id=ot151807"
   },
   {
-    "title": "Module Rơle 1 Kênh AC 110V/220V RF 433MHz, Bộ Thu & Phát Không Dây",
-    "price": 85142,
-    "original_price": 141903,
+    "title": "ÁO ỐNG NỮ GẮN LOGO MỚI ON7",
+    "price": 9000,
+    "original_price": 35000,
+    "discount_pct": 74,
+    "quantity": 35,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7qukw-ljv0hq8c3gg29f_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F16681316%2F23075419950&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "[🔥TRỢ GIÁ] Màu Nước Hũ 100ml Goat Gouache cao cấp Finenolo Deli Chất Siêu Mịn Pha Sẵn Dễ Trộn Màu Tươi Sáng",
+    "price": 9000,
+    "original_price": 20000,
+    "discount_pct": 55,
+    "quantity": 30,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lw719guqij1557_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F884990462%2F22969140732&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Kính cường lực chống nhìn trộm 360 độ KINGKONG K12, chịu lực tốt, chống xước hiệu quả 11 12 13 14 15 16 17 Pro Plus PRM",
+    "price": 9000,
+    "original_price": 80000,
+    "discount_pct": 89,
+    "quantity": 190,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpajb1orma6l8b_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F654857837%2F29334046519&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Hạt giống hoa sao nhái MÀU VÀNG - hoa cánh bướm GÓI 200 HẠT TÚI ZIP đẹp tỷ lệ nảy mầm cao dễ trồng HSN0044",
+    "price": 9000,
+    "original_price": 38000,
+    "discount_pct": 76,
+    "quantity": 31,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqivq9jbw3da62_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F628652152%2F17557629897&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "[Hỏa Tốc] Combo Khăn tắm viên nén dùng một lần, Khăn tắm cotton hàng dày loại 1 tiện lợi đi du lịch, dã ngoại 01596",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 25,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-mae0bt0r3i6va9_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F391756%2F17268930988&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Miếng Dán Nâng Ngực Tai Thỏ Siêu Nâng, Sử Dụng Nhiều Lần [HỘP 2 MIẾNG]",
+    "price": 9000,
+    "original_price": 40000,
+    "discount_pct": 78,
+    "quantity": 5,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lsflvd0tebvdf8_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F22431875%2F2300329160&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Set Khăn Lau Tay, Lau Bếp đa năng - 2 mặt 2 chất liệu - màu ghi sạch sẽ - size 20x20cm",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 25,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m6f2sexs67j5b9_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F63396025%2F26476662595&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Tai nghe nhét tai có dây nghe nhạc chơi game U19, U24 bass ấm jack 3.5mm có mic nghe gọi cho điện thoại và máy tính bảng",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 20,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lqhg6nnxzxo7db_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F363074756%2F25558459281&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "[Quà Tặng] Sổ Tay Từ Vựng, Sổ Học Từ Vựng Kèm Kiến Thức Tiếng Anh Cơ Bản, Phiên Âm IPA - MCBooks",
+    "price": 9000,
+    "original_price": 35000,
+    "discount_pct": 74,
+    "quantity": 20,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mbey56dfdigjc1_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F442838926%2F29887986125&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Bộ 2 Ống Hút Và Cọ Vệ Sinh Chất Liệu inox Tiện Lợi Sử Dụng An Toàn Sức Khỏe - QH Shop",
+    "price": 9000,
+    "original_price": 20000,
+    "discount_pct": 55,
+    "quantity": 30,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m0e9zrzzo2vjd5_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F295424357%2F25273770700&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "Thùng 20 gói giấy ăn LUALA cao cấp 4 lớp khăn giấy ăn rút mềm mại siêu dai không chất tẩy trắng",
+    "price": 9000,
+    "original_price": 35000,
+    "discount_pct": 74,
+    "quantity": 25,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqofzqe7a8el0a_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1638331358%2F46956978730&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "🔥 Gôm Tẩy Định Vị Tẩy Bút Chì Deli Tẩy Sạch Sẽ Ít Vụn Không Mòn Giấy Phù Hợp Cho Học Sinh Văn Phòng",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 200,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m2hma0d8moc22a_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021392906%2F29858633368&affiliate_id=17351620126&sub_id=9k171807"
+  },
+  {
+    "title": "[Sét 3 cuộn]Túi đựng rác tự phân hủy màu đen không lõi size 55cmx65cm",
+    "price": 13050,
+    "original_price": 15000,
+    "discount_pct": 13,
+    "quantity": 80,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lukw7v2p62at20_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F365181681%2F20951342034&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "[Top Value] Bột thông cống BLUE Đột phá gói 100g",
+    "price": 16181,
+    "original_price": 17399,
+    "discount_pct": 7,
+    "quantity": 5,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mfcf5ppe8xzdce_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1175586038%2F40172656060&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Khăn Tắm, Gội, Lau Mặt Châu Âu LOTUS 100% Cotton Mềm Mịn Thấm Hút Dùng Cho Gia Đình Spa Khách Sạn",
+    "price": 16800,
+    "original_price": 35000,
+    "discount_pct": 52,
+    "quantity": 500,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mnka5fmx47i9d9_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F233958535%2F7167929427&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Kẹp tóc nữ ngọc trai giả Hàn Quốc 2026 Kẹp tóc hoa phong cách mới",
+    "price": 22000,
+    "original_price": 40000,
+    "discount_pct": 45,
+    "quantity": 631,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-822zt-mi1kfsxgvd374a_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F408922889%2F45052841296&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Ốp Lưng iPhone TPU Mềm Nút Bấm Kim Loại, Chống Sốc, Bảo Vệ Camera - iP 6/6s/7/8/Plus/X/XS/XR/11/12/13/14/15/16/Pro/Max",
+    "price": 24850,
+    "original_price": 35000,
+    "discount_pct": 29,
+    "quantity": 750,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-moth14yei51r9e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F712064383%2F28159013619&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Sách - Poco Ở Thế Giới Udon (Tập 8)",
+    "price": 29000,
+    "original_price": 58000,
+    "discount_pct": 50,
+    "quantity": 30,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-81zuc-mmso4u9a74ea7c_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F469003236%2F29657978576&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Khẩu trang CARDINA chống tia UV lõi bông hoạt tính lọc không khí làm mát thiết kế che vùng da mắt nhạy cảm 4KTKK01",
+    "price": 29000,
+    "original_price": 95000,
+    "discount_pct": 69,
+    "quantity": 92,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lwi4xetfw4ij17_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F448787450%2F24058579139&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "XẢ HÀNG GIÁ GỐC Áo croptop xốp kẻ gân co dãn tốt Miho House",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 24,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-luegfoe4k1zze4_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F5570691%2F16760643649&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Bông tẩy trang Silkee dạng tròn 115 miếng/gói",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 25,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpmfq4cjndog13_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F315629668%2F46312466404&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Bột Tẩy Lồng Máy Giặt G-Okay , 1 Gói Bột 400gr - Vệ Sinh Lồng Giặt , Diệt Khuẩn Khử Mùi Miệu Quả",
+    "price": 29000,
+    "original_price": 80000,
+    "discount_pct": 64,
+    "quantity": 27,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-malnoeh5a0ns01_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1376916029%2F44153233777&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Quần bầu  cạp chéo, chất cotton co giãn 4 chiều, có chun chỉnh bụng, size từ 40 -80kg",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 35,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lyzevqbvtmbxef_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F14667250%2F23645416144&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Hộp 10 Chiếc Bút Chì Định Vị Deli 2B HB Màu Táo Xanh Học Sinh Lớp 1 Bé Tập Viết Cầm Bút Đúng Cách",
+    "price": 29000,
+    "original_price": 70000,
+    "discount_pct": 59,
+    "quantity": 10,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqbpqxvafwgb7e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F127805122%2F55463122420&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Sách - Bộ sách cùng con học nói -  Bộ sách dành cho bé trên 1 tuổi - Finybooks",
+    "price": 29000,
+    "original_price": 85000,
+    "discount_pct": 66,
+    "quantity": 40,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpzfw69ecrgr8f_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F41925459%2F29202827970&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Miếng dán màn hình Mácbook đủ dòng Air Pro, Dán màn hình từ tính bảo vệ chống trầy xước Mácbook",
+    "price": 29000,
+    "original_price": 98000,
+    "discount_pct": 70,
+    "quantity": 25,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mcyeooltt9vj73_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F439171782%2F8969892842&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Bộ Vệ Sinh Laptop Đầy Đủ Dụng Cụ Chuyên Dụng Làm Sạch Màn Hình Và Bàn Phím Hiệu Quả, Vệ Sinh Laptop",
+    "price": 29000,
+    "original_price": 69000,
+    "discount_pct": 58,
+    "quantity": 24,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mcyfxk73l96506_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F439171782%2F28709343275&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Tinh Dầu Treo Xe Ôtô, Tủ Quần Áo, Treo Thơm Phòng Mộc An Nhiên - 21 mùi hương",
+    "price": 29000,
+    "original_price": 45000,
+    "discount_pct": 36,
+    "quantity": 185,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpz1h8iqu2330a_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F684726466%2F23922474647&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Mít sấy giòn nguyên siêu ngon",
+    "price": 39000,
+    "original_price": 65000,
     "discount_pct": 40,
-    "quantity": 14,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134301-81zub-minw3qsalo9383_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F196261835%2F55608157716&affiliate_id=17351620126&sub_id=ot091807"
+    "quantity": 150,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/2a760cfd6a58511f3fa57cb2d0195529_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F43086726%2F16901566359&affiliate_id=17351620126&sub_id=ot171807"
   },
   {
-    "title": "[ DEAL HOT ] Kệ Sách Để Sàn Nhiều Ngăn - Giá Kệ Hình Chữ U",
-    "price": 183000,
-    "original_price": 300000,
-    "discount_pct": 39,
-    "quantity": 6,
-    "time_slot": "09:00",
-    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lz7961n4fq8x7f_tn",
-    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F92115962%2F8027623681&affiliate_id=17351620126&sub_id=ot091807"
+    "title": "Vỏ gối nằm 50x70cm 40x60cm | Vỏ gối ôm 35x100cm | Áo bọc gối Thun lạnh Ý | Cotton 100% và CottonPoly",
+    "price": 40960,
+    "original_price": 64000,
+    "discount_pct": 36,
+    "quantity": 1908,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m96z4b4l3l9qba_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F159685460%2F28935571469&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Bột Bánh Xèo Hộp 500G - Thương Hiệu Bu Phương Ẩm Thực, Bột Làm Bánh Xèo Chuẩn Vị Truyền Thống",
+    "price": 64800,
+    "original_price": 90000,
+    "discount_pct": 28,
+    "quantity": 200,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-moau4l8pyw3za6_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1209488033%2F43507199466&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Giấy vệ sinh treo tường TopGia đa sắc đa năng từ bột giấy thiên nhiên, 1280tờ/4lớp",
+    "price": 135780,
+    "original_price": 219000,
+    "discount_pct": 38,
+    "quantity": 1750,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqdg7vczrle6c2_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1016604648%2F23552060269&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "NIRA MẪU MỚI - LOẠI XỊN GỐI TỰA XE Ô TÔ Bằng Cao Su Non Mềm Mại Cho Xe Hơi Ô Tô Đệm Vòng Cung 3D Hỗ Trợ Thoáng Khí",
+    "price": 162000,
+    "original_price": 200000,
+    "discount_pct": 19,
+    "quantity": 10,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mme4xzfu05xr53_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F47680533%2F2581308126&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Bao cao su PlayAh Her Feel Ultra Thin 003 Hộp 3/10 Size 52mm Siêu Mỏng Nhiều Gel Cao Cấp",
+    "price": 235200,
+    "original_price": 294000,
+    "discount_pct": 20,
+    "quantity": 320,
+    "time_slot": "17:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mpt4svsxd7gh70_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F999525042%2F25914083694&affiliate_id=17351620126&sub_id=ot171807"
+  },
+  {
+    "title": "Băng Keo Thể Thao Quấn Cổ Chân Bảo Vệ Cổ Chân Tự Dính Đá Bóng Chống Chấn Thương Aobongda.net",
+    "price": 1000,
+    "original_price": 15000,
+    "discount_pct": 93,
+    "quantity": 25,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134201-7r98o-llzriwv48man83_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F131494490%2F16998940807&affiliate_id=17351620126&sub_id=1k191807"
+  },
+  {
+    "title": "Tất Nam MENTORIS Chất Liệu Cotton Co Giãn, Thoáng Khí , Chống hôi chân MTN01",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 10,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lryfsemzxqqh36_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F159838421%2F22488162033&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Miếng Dán Lót Gót Giày Chống Trượt MINSU M5516 Đệm Chống Trầy Gót Chân, Bị Rộng Chuyên Cho Giày Cao Gót, Thể Thao Nam Nữ",
+    "price": 9000,
+    "original_price": 20000,
+    "discount_pct": 55,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m8pxj9pi7jamff_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F198790471%2F24727798162&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "[Y088] Bút Kẻ Mắt Nước, Kẻ Bọng Mắt SWEET MINT - Đầu mảnh 0,05mm - Chống Thấm, Lâu Trôi",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lstpguwjm0t5ce_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F32256775%2F25418774791&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Sách Ehon - Phát triển tư duy toàn diện cho bé - Ehon Taxi mèo – Nhà vệ sinh tên lửa -Tớ là máy bay",
+    "price": 9000,
+    "original_price": 52000,
+    "discount_pct": 83,
+    "quantity": 10,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m446x0e0krnra5_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1188422984%2F26921411670&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Ốp Lưng Cho OPPO A17 A17K A18 A38 A58 A60 4G Phim Hoạt Hình Silicon Mềm Đáng Yêu Vỏ Điện Thoại TPU Đen Bóng Than Thiên Thần Mắt Chống Sốc Ốp Lưng",
+    "price": 9000,
+    "original_price": 38000,
+    "discount_pct": 76,
+    "quantity": 30,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-820lb-mno8iirpodmpe8_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1540262289%2F40280516955&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "[🔥MUA 3 TẶNG 1] Màu Acrylic 100ml Cao Cấp Deli Dạng Hũ - Tô Đất Sét Đất Nặn Tự Khô Vẽ Túi Vải Tote",
+    "price": 9000,
+    "original_price": 20000,
+    "discount_pct": 55,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqnj8hw7bbwte7_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F884990462%2F23266188174&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Kính cường lực dành cho điện thoại iphone trong suốt, không viền đen, chống nhìn trộm",
+    "price": 9000,
+    "original_price": 35000,
+    "discount_pct": 74,
+    "quantity": 51,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqj905bf4jr51e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F65417237%2F46711448159&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Khăn Tắm Xuất Hàn Quốc Cao Cấp, Size Lớn 70x140cm - Siêu Mềm Mịn, Siêu Bền - T978",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 40,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lpjlb8x7ecl1a1_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1101127972%2F22459156984&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Set 5 Kẹp tóc mỏ vịt bằng nhựa cứng màu lì dễ dàng tạo kiểu khi làm tóc trang điểm K84",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 26,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mn1r7cbhytq919_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1153492880%2F41380048374&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Sách - Tô Màu Cho Bé - Bé Làm Họa Sĩ ( Tự Chọn Chủ Đề )",
+    "price": 9000,
+    "original_price": 25000,
+    "discount_pct": 64,
+    "quantity": 40,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/dd0092d5446ef1f83ab68e15e1b0fd73_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F14390734%2F20925325749&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Bóng Đèn Led Trụ 10W, 20W, 30W, 40W, 50W, 65W - Đèn Led Chống Nước, Tiết Kiệm Điện 90%, Bóng Đèn Led Siêu Sáng Khải Ân",
+    "price": 9000,
+    "original_price": 30000,
+    "discount_pct": 70,
+    "quantity": 25,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mlztdgl484coca_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F49275524%2F23121133229&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "Nước Tẩy Quần Áo Đậm Đặc Javen Tẩy Mọi Vết Bẩn 600ml/1000ml",
+    "price": 9000,
+    "original_price": 14000,
+    "discount_pct": 30,
+    "quantity": 30,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lwjf3zqj221nee_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1054483616%2F28702951222&affiliate_id=17351620126&sub_id=9k191807"
+  },
+  {
+    "title": "[HCM] Tăm bông cho bé sơ sinh V-Coool, hộp que mềm mịn",
+    "price": 21000,
+    "original_price": 30000,
+    "discount_pct": 30,
+    "quantity": 150,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-m4stndl5xjug20_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F255435129%2F23250250278&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "12 Cuộn (4 bịch) Túi Đựng Rác Đen Kích Thước Lớn 65x55cm Tự Phân Hủy, Thân Thiện Với Môi Trường",
+    "price": 22800,
+    "original_price": 40000,
+    "discount_pct": 43,
+    "quantity": 60,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mcdp4c1pfakl05_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1423867958%2F27588851347&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Combo 5/10/20 Bút bi Thiên Long Pro 027 TL-105 - Bút bi 3 màu mực, thân bút pastel thời trang",
+    "price": 23600,
+    "original_price": 40000,
+    "discount_pct": 41,
+    "quantity": 50,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mda53ndxukhrc4_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F367619913%2F20391386836&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "[TẶNG TẤT] Áo ba lỗ nam chất liệu thun lạnh thông hơi Mentoris, Dáng sát nách thể thao mát và co giãn MTT01",
+    "price": 29000,
+    "original_price": 198000,
+    "discount_pct": 85,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mp12ekop4gzz7e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F159838421%2F18593592034&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Miếng Lót Giày Kháng Khuẩn 4D Bảo vệ Chân MINSU M2352 Chống Trơn Trượt, Lưu Thông Khí Huyết, Đệm Êm Chân, Khử Mùi Nam Nữ",
+    "price": 29000,
+    "original_price": 90000,
+    "discount_pct": 68,
+    "quantity": 24,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-minzpo5g2scnd4_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F198790471%2F28013769267&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "[🔥NEW] Hộp 10 Bút Chì Gỗ Deli HB/2B Thân Lục Giác, Viết Mượt, Dễ Chuốt, Cho Học Sinh & Văn Phòng",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 120,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqlnmh074b2n9c_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021396369%2F40332542175&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Sách Bước đầu tập viết Hành trang cho bé vào lớp 1 (Khách lựa chọn Phân loại)",
+    "price": 29000,
+    "original_price": 52000,
+    "discount_pct": 44,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/1ffc1ee25c8f8c4f220bdb779e2380d7_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F479140887%2F8884299336&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Combo 5 Bàn chải đánh giày, cây cọ giày đa năng cầm tay nhỏ gọn tiện lợi",
+    "price": 29000,
+    "original_price": 73650,
+    "discount_pct": 61,
+    "quantity": 30,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/sg-11134201-7rdyo-mbsztdfkgk0m75_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F367890943%2F44407393171&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Găng Tay Đi Đường Chống Nắng (Tia UV) Nam Nữ Xỏ Hở 2 Ngón Tay Đi Phượt, Câu Cá Thoáng Khí,Co Dãn",
+    "price": 29000,
+    "original_price": 190000,
+    "discount_pct": 85,
+    "quantity": 25,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m9tyjethmooyea_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F257024829%2F44201112310&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "(Combo 2 Dây ) Thắt lưng vô hình hoa cúc, unisex phong cách hàn quốc,co giãn có thể điều chỉnh không đường may liền mạch",
+    "price": 29000,
+    "original_price": 70000,
+    "discount_pct": 59,
+    "quantity": 26,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ras8-mdmzo1dmp0hx19_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F877377304%2F41064247917&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "[XẢ DATE 2027] Apro mèo 500g - Thức ăn cho mèo mọi lứa tuổi - Thái Lan",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 25,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lmirlj9vd2ovaf_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021910717%2F21784914191&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Bút Sơn Acrylic Marker Deli THÊM 80% MỰC - 12/24/36/48/64 Màu Tô Vẽ Trên Mọi Chất Liệu Giày Vải Cốc",
+    "price": 29000,
+    "original_price": 86400,
+    "discount_pct": 66,
+    "quantity": 30,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mjs3oaer3g91ad_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021392906%2F25215946975&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Cáp Sạc Nhanh 20W dành cho iphone 8 đến 14PRM – Hỗ Trợ Sạc Nhanh PD, Truyền Dữ Liệu Tốc Độ Cao",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 16,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mqj9fkhey51q65_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F65417237%2F56758962820&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Bút Marker Nhũ Deli Thân Tam Giác - Hộp PP 12/24/36/48 Màu Mực Nhũ Lấp Lánh Vẽ Tranh Decor",
+    "price": 29000,
+    "original_price": 88200,
+    "discount_pct": 67,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mojjl2w67k7510_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F127805122%2F50660497835&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Khăn Trùm Đầu Ninja Fullface Kiêm Khẩu Trang Chống Nắng, Chống Bụi",
+    "price": 29000,
+    "original_price": 60000,
+    "discount_pct": 52,
+    "quantity": 24,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7ra0g-m95opeib4viaf2_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F51246023%2F18675663433&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Quần short nam thể thao Chất liệu vải gió trơn thoáng mát",
+    "price": 29000,
+    "original_price": 70000,
+    "discount_pct": 59,
+    "quantity": 60,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mplgmcdmriffe8_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1078407420%2F50910685965&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "[🔥GIÁ SỐC] Hộp 50 bút bi bấm văn phòng mực xanh đen đỏ ngòi 0.7mm Deli giá rẻ viết nét đều trơn tru phù hợp học sinh",
+    "price": 29000,
+    "original_price": 108000,
+    "discount_pct": 73,
+    "quantity": 20,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mllx0ptv7j7s9e_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1021396369%2F22447383447&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Dao Thái Thịt Bản To Đa Năng DABETO - Thép Chống Gỉ, Sắc Bén Cán Gỗ Tự Nhiên",
+    "price": 29000,
+    "original_price": 99000,
+    "discount_pct": 71,
+    "quantity": 30,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mgpczblmk1sac6_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1432779044%2F48950906860&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Combo 200gr sáp wax lông nóng [FREESHIP] kèm chén và 10ml mỡ trăn giúp triệt lông tay chân , nách , râu,bikini",
+    "price": 50350,
+    "original_price": 95000,
+    "discount_pct": 47,
+    "quantity": 140,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lqmafkeutqnr72_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F119096090%2F25659048824&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Áo Thun Trơn Cotton 250gsm GODMOTHER Premium Full Color Cổ Tròn Nam Nữ",
+    "price": 123510,
+    "original_price": 179000,
+    "discount_pct": 31,
+    "quantity": 8,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lve2hc8ryz6593_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F703090265%2F19787998337&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Áo Thun Local Brand Themin's FLAG TM01 Áo Thun Unisex Form Boxy Vải Cotton 260gsm",
+    "price": 173530,
+    "original_price": 259000,
+    "discount_pct": 33,
+    "quantity": 90,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-820l4-mhvn31r2dj48b1_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F1688161891%2F50152623068&affiliate_id=17351620126&sub_id=ot191807"
+  },
+  {
+    "title": "Cây Lau Nhà Tự Vắt KITIMOP CORAL Mã KTMC-01, Chổi Lau Nhà Tự Vắt Thông Minh Xoay 360 Độ, 2 Bông Lau",
+    "price": 178500,
+    "original_price": 350000,
+    "discount_pct": 49,
+    "quantity": 300,
+    "time_slot": "19:00",
+    "image_url": "https://down-bs-vn.img.susercontent.com/vn-11134207-81ztc-mos2o0udkikr3a_tn",
+    "product_link": "https://s.shopee.vn/an_redir?origin_link=https%3A%2F%2Fshopee.vn%2Fopaanlp%2F76219330%2F43670888876&affiliate_id=17351620126&sub_id=ot191807"
   }
 ]
