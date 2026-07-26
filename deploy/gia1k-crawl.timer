@@ -1,0 +1,14 @@
+[Unit]
+Description=Chạy Gia1K crawler mỗi giờ (phút :45, trước các khung giờ sale)
+
+[Timer]
+# Phút 45 mỗi giờ, theo giờ hệ thống.
+# => đặt timezone VPS = Asia/Ho_Chi_Minh: timedatectl set-timezone Asia/Ho_Chi_Minh
+OnCalendar=*-*-* *:45:00
+# Chạy bù nếu VPS vừa bật lại và đã lỡ lần gần nhất
+Persistent=true
+# Tránh nhiều VPS/đợt cùng đập vào nguồn đúng một thời điểm
+RandomizedDelaySec=30
+
+[Install]
+WantedBy=timers.target

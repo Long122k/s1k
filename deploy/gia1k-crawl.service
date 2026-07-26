@@ -1,0 +1,24 @@
+[Unit]
+Description=Gia1K crawler — sinh data.json từ shopee1k.com + nghienshopee.net
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=gia1k
+Group=gia1k
+WorkingDirectory=/var/www/gia1k
+Environment=OUTPUT_FILE=/var/www/gia1k/data.json
+ExecStart=/var/www/gia1k/.venv/bin/python /var/www/gia1k/getdeal1k.py
+# Crawler đôi khi treo (network) → giới hạn thời gian chạy
+TimeoutStartSec=120
+Nice=10
+
+# Siết bảo mật (chạy dịch vụ nền tối thiểu quyền)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/var/www/gia1k
+
+[Install]
+WantedBy=multi-user.target

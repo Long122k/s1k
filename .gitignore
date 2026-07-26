@@ -1,0 +1,15 @@
+# Dữ liệu sinh ra lúc chạy (VPS tự tạo, không commit)
+data.json
+data.json.tmp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# File không liên quan tới site này
+price_history.db
+
+# OS
+.DS_Store
