@@ -1,6 +1,7 @@
 # Dữ liệu sinh ra lúc chạy (VPS tự tạo, không commit)
 data.json
 data.json.tmp
+*.log
 
 # Python
 __pycache__/

@@ -9,29 +9,28 @@ Người dùng ──► Cloudflare (proxied) ──► VPS: nginx  ─┬─ in
                                                      └─ data.json  ◄── systemd timer chạy getdeal1k.py mỗi giờ
 ```
 
-Giả định VPS chạy **Ubuntu 22.04+ / Debian 12+**, có quyền `sudo`. Thư mục chuẩn: `/var/www/gia1k`.
+Giả định VPS chạy **Ubuntu 22.04+ / Debian 12+**, có quyền `sudo`. Thư mục chuẩn: `/home/ubuntu/s1k` (trong home của user `ubuntu`).
 
 ---
 
 ## 1. Đưa code lên VPS
 
-SSH vào VPS rồi clone repo vào đúng `/var/www/gia1k`:
+SSH vào VPS (user `ubuntu`) rồi clone repo vào `/home/ubuntu/s1k`:
 
 ```bash
-sudo mkdir -p /var/www/gia1k
-sudo chown "$USER" /var/www/gia1k
-git clone <URL_REPO_CUA_BAN> /var/www/gia1k
+git clone https://github.com/Long122k/s1k.git /home/ubuntu/s1k
 ```
 
-> Không có git remote? Dùng `scp -r ./s1k/* user@VPS_IP:/tmp/gia1k/` rồi `sudo mv /tmp/gia1k/* /var/www/gia1k/`.
+> Repo private? Clone kèm token đọc: `git clone https://<TOKEN>@github.com/Long122k/s1k.git /home/ubuntu/s1k`
+> Không dùng git? Từ máy bạn: `scp -r ./s1k ubuntu@VPS_IP:/home/ubuntu/`
 
 ## 2. Cài đặt (1 lệnh)
 
 ```bash
-sudo bash /var/www/gia1k/deploy/setup_vps.sh
+sudo bash /home/ubuntu/s1k/deploy/setup_vps.sh
 ```
 
-Script sẽ: cài `python3-venv/pip/nginx`, đặt timezone VN, tạo user `gia1k`, tạo venv + cài deps (chỉ `requests`), bật **systemd timer crawl mỗi giờ (phút :45)**, chạy crawl lần đầu, và cấu hình nginx.
+Script sẽ: cài `python3-venv/pip/nginx`, đặt timezone VN, mở quyền cho nginx đọc site trong home, tạo venv + cài deps (chỉ `requests`), bật **systemd timer crawl mỗi giờ (phút :45)** (chạy dưới user `ubuntu`), chạy crawl lần đầu, và cấu hình nginx.
 
 > Nguồn crawl là **shopee1k.com + nghienshopee.net** (không cần trình duyệt/Playwright). VPS chỉ cần Python + `requests`.
 
@@ -93,12 +92,12 @@ Xoá các record A/CNAME cũ trỏ về GitHub Pages (185.199.108.153…). Giữ
 | Crawl thủ công ngay      | `sudo systemctl start gia1k-crawl.service`                  |
 | Xem log crawl            | `journalctl -u gia1k-crawl.service -f`                      |
 | Đổi lịch crawl           | sửa `OnCalendar` trong `/etc/systemd/system/gia1k-crawl.timer` → `sudo systemctl daemon-reload && sudo systemctl restart gia1k-crawl.timer` |
-| Cập nhật code            | `cd /var/www/gia1k && sudo -u gia1k git pull` → `sudo systemctl reload nginx` |
+| Cập nhật code            | `cd /home/ubuntu/s1k && git pull` (nginx tự phục vụ bản mới)  |
 
 ### Thay systemd bằng crontab (nếu thích)
 ```cron
-# crontab của user gia1k — crawl mỗi giờ phút 45
-45 * * * * OUTPUT_FILE=/var/www/gia1k/data.json /var/www/gia1k/.venv/bin/python /var/www/gia1k/getdeal1k.py >> /var/log/gia1k-crawl.log 2>&1
+# crontab của user ubuntu (chạy: crontab -e) — crawl mỗi giờ phút 45
+45 * * * * OUTPUT_FILE=/home/ubuntu/s1k/data.json /home/ubuntu/s1k/.venv/bin/python /home/ubuntu/s1k/getdeal1k.py >> /home/ubuntu/s1k/crawl.log 2>&1
 ```
 
 ## Xử lý sự cố nhanh

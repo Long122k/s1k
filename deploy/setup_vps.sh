@@ -3,11 +3,11 @@
 # setup_vps.sh — Cài đặt Gia1K trên VPS Ubuntu/Debian.
 # Chạy 1 lần với quyền root:  sudo bash deploy/setup_vps.sh
 #
-# Giả định: code đã được đặt tại /var/www/gia1k (xem DEPLOY.md).
+# Giả định: code đã được clone tại /home/ubuntu/s1k (xem DEPLOY.md).
 set -euo pipefail
 
-APP_DIR=/var/www/gia1k
-APP_USER=gia1k
+APP_DIR=/home/ubuntu/s1k
+APP_USER=ubuntu
 
 if [[ $EUID -ne 0 ]]; then
   echo "❌ Cần chạy bằng root:  sudo bash deploy/setup_vps.sh" >&2
@@ -26,9 +26,10 @@ apt-get install -y python3-venv python3-pip nginx git
 echo "▶ 2/7  Đặt timezone = Asia/Ho_Chi_Minh ..."
 timedatectl set-timezone Asia/Ho_Chi_Minh || true
 
-echo "▶ 3/7  Tạo user hệ thống '$APP_USER' ..."
-id -u "$APP_USER" &>/dev/null || useradd --system --home "$APP_DIR" --shell /usr/sbin/nologin "$APP_USER"
+echo "▶ 3/7  Mở quyền để nginx đọc được site trong home của '$APP_USER' ..."
 chown -R "$APP_USER:$APP_USER" "$APP_DIR"
+# nginx (www-data) cần quyền 'đi qua' thư mục home để đọc file site (home thường 0750)
+chmod o+x "$(dirname "$APP_DIR")"
 
 echo "▶ 4/7  Tạo virtualenv + cài Python deps (chỉ requests) ..."
 sudo -u "$APP_USER" python3 -m venv "$APP_DIR/.venv"

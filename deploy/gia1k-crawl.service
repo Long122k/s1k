@@ -5,11 +5,11 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-User=gia1k
-Group=gia1k
-WorkingDirectory=/var/www/gia1k
-Environment=OUTPUT_FILE=/var/www/gia1k/data.json
-ExecStart=/var/www/gia1k/.venv/bin/python /var/www/gia1k/getdeal1k.py
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/s1k
+Environment=OUTPUT_FILE=/home/ubuntu/s1k/data.json
+ExecStart=/home/ubuntu/s1k/.venv/bin/python /home/ubuntu/s1k/getdeal1k.py
 # Crawler đôi khi treo (network) → giới hạn thời gian chạy
 TimeoutStartSec=120
 Nice=10
@@ -18,7 +18,7 @@ Nice=10
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=full
-ReadWritePaths=/var/www/gia1k
+ReadWritePaths=/home/ubuntu/s1k
 
 [Install]
 WantedBy=multi-user.target
