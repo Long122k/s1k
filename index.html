@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#241d1a">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
   <title>Gia1K – Săn Deal 1K Shopee</title>
   <meta name="description" content="Săn deal Shopee giá 1K - 9K - 29K theo khung giờ flash sale. Cập nhật liên tục.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -212,7 +214,8 @@
 <script>
   let allDeals = [];
   let slotsMeta = [];          // [{label, status}]
-  let nextSlot = null;
+  let liveLabel = null;        // khung đang diễn ra (tính theo giờ VN hiện tại)
+  let nextLabel = null;        // khung kế tiếp
   let updatedAt = '';
   let currentTime  = 'all';
   let currentPrice = 'all';
@@ -227,6 +230,32 @@
 
   function vnNow() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' })); }
   function slotMin(label) { const m = /(\d{1,2}):(\d{2})/.exec(label || ''); return m ? +m[1]*60 + +m[2] : 0; }
+
+  // Tính khung ĐANG diễn ra + khung KẾ TIẾP theo giờ VN hiện tại của người xem
+  // (không tin snapshot status của crawler — vì data có thể đã cũ tới ~1 giờ).
+  function computeSlotTiming() {
+    const now = vnNow();
+    const nowSec = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    let live = null, liveSince = Infinity, nxt = null, nextUntil = Infinity;
+    for (const s of slotsMeta) {
+      if (!s.label) continue;
+      const ss = slotMin(s.label) * 60;
+      let since = nowSec - ss; if (since < 0) since += 86400;   // khung đã bắt đầu bao lâu
+      let until = ss - nowSec; if (until <= 0) until += 86400;  // còn bao lâu tới lần kế
+      if (since < liveSince) { liveSince = since; live = s.label; }
+      if (until < nextUntil) { nextUntil = until; nxt = s.label; }
+    }
+    // Khung bắt đầu quá 3 giờ trước → coi như đã kết thúc (không còn "đang diễn ra")
+    if (liveSince > 3 * 3600) live = null;
+    return { live, nxt, nextUntil };
+  }
+
+  // Gán lại status live/upcoming cho từng khung theo giờ VN
+  function applySlotStatus() {
+    const t = computeSlotTiming();
+    liveLabel = t.live; nextLabel = t.nxt;
+    for (const s of slotsMeta) s.status = (s.label === liveLabel ? 'live' : 'upcoming');
+  }
 
   function safeUrl(u) {
     if (!u) return '';
@@ -283,13 +312,13 @@
 
       const deals = Array.isArray(payload) ? payload : (payload.deals || []);
       slotsMeta = Array.isArray(payload) ? [] : (payload.slots || []);
-      nextSlot  = Array.isArray(payload) ? null : (payload.next_slot || payload.current_slot || null);
       updatedAt = Array.isArray(payload) ? '' : (payload.generated_at || '');
 
       if (!slotsMeta.length) {
         slotsMeta = [...new Set(deals.map(d => d.time_slot).filter(Boolean))].map(l => ({ label: l, status: '' }));
       }
       slotsMeta.sort((a, b) => slotMin(a.label) - slotMin(b.label));
+      applySlotStatus();   // tính live/next theo giờ VN hiện tại, không dùng status cũ
 
       allDeals = deals.sort((a, b) => {
         const s = slotMin(a.time_slot) - slotMin(b.time_slot);
@@ -378,7 +407,7 @@
       const pct    = item.discount_pct || (op && op > p ? Math.round((1 - p / op) * 100) : 0);
       const title  = String(item.title || '');
       const link   = safeUrl(item.product_link);
-      const isLive = item.status === 'live';
+      const isLive = item.time_slot === liveLabel;
       const low    = qty > 0 && qty <= 10;
 
       const card = h('div', { class: 'card' });
@@ -436,20 +465,26 @@
 
   function startCountdown() {
     const bar = document.getElementById('cdbar');
-    const m = /(\d{1,2}):(\d{2})/.exec(nextSlot || '');
-    if (!m) { bar.style.display = 'none'; return; }
-    bar.style.display = 'flex';
-    const targetMin = +m[1] * 60 + +m[2];
-    document.getElementById('cdSlot').textContent = nextSlot;
+    if (!slotsMeta.length) { bar.style.display = 'none'; return; }
+    let shownLive = liveLabel;
 
     function tick() {
-      const now = vnNow();
-      const nowSec = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-      let diff = targetMin * 60 - nowSec;
-      if (diff < 0) diff += 86400;
-      document.getElementById('cdH').textContent = Math.floor(diff / 3600).toString().padStart(2, '0');
-      document.getElementById('cdM').textContent = Math.floor((diff % 3600) / 60).toString().padStart(2, '0');
-      document.getElementById('cdS').textContent = (diff % 60).toString().padStart(2, '0');
+      const t = computeSlotTiming();               // tính lại mỗi giây theo giờ VN
+      if (!t.nxt) { bar.style.display = 'none'; return; }
+      bar.style.display = 'flex';
+      document.getElementById('cdSlot').textContent = t.nxt;
+      const d = t.nextUntil;
+      document.getElementById('cdH').textContent = Math.floor(d / 3600).toString().padStart(2, '0');
+      document.getElementById('cdM').textContent = Math.floor((d % 3600) / 60).toString().padStart(2, '0');
+      document.getElementById('cdS').textContent = (d % 60).toString().padStart(2, '0');
+
+      // Qua ranh giới khung giờ (khung mới bắt đầu) → cập nhật lại chip + thẻ
+      if (t.live !== shownLive) {
+        shownLive = t.live;
+        applySlotStatus();
+        renderFilters();
+        filterDeals();
+      }
     }
     clearInterval(window._cd); window._cd = setInterval(tick, 1000); tick();
   }

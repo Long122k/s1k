@@ -55,26 +55,22 @@ Xoá các record A/CNAME cũ trỏ về GitHub Pages (185.199.108.153…). Giữ
 
 ## 4. Bật HTTPS (khuyến nghị — Full strict)
 
-1. Cloudflare → **SSL/TLS → Origin Server → Create Certificate** (để mặc định), tạo cho `gia1k.com, *.gia1k.com`.
-2. Trên VPS lưu 2 phần vừa tạo:
+1. **Tạo cert origin:** Cloudflare → **SSL/TLS → Origin Server → Create Certificate** (để mặc định) → tạo cho `gia1k.com, *.gia1k.com`. Cloudflare hiện 2 ô: *Origin Certificate* và *Private Key*.
+2. **Lưu cert lên VPS:**
    ```bash
    sudo mkdir -p /etc/ssl/cloudflare
-   sudo nano /etc/ssl/cloudflare/gia1k.com.pem   # dán "Origin Certificate"
-   sudo nano /etc/ssl/cloudflare/gia1k.com.key   # dán "Private Key"
+   sudo nano /etc/ssl/cloudflare/gia1k.com.pem   # dán "Origin Certificate" rồi lưu
+   sudo nano /etc/ssl/cloudflare/gia1k.com.key   # dán "Private Key" rồi lưu
    sudo chmod 600 /etc/ssl/cloudflare/gia1k.com.key
    ```
-3. Sửa `/etc/nginx/sites-available/gia1k`: bỏ comment block `server { listen 443 ssl; ... }` ở cuối file, và đổi block `:80` thành redirect:
-   ```nginx
-   server {
-       listen 80; listen [::]:80;
-       server_name gia1k.com www.gia1k.com;
-       return 301 https://$host$request_uri;
-   }
+3. **Thay config nginx bằng bản HTTPS có sẵn** (đã kèm redirect 80→443):
+   ```bash
+   sudo cp /home/ubuntu/s1k/deploy/nginx-gia1k-https.conf /etc/nginx/sites-available/gia1k
+   sudo nginx -t && sudo systemctl reload nginx
    ```
-4. Áp dụng: `sudo nginx -t && sudo systemctl reload nginx`
-5. Cloudflare → **SSL/TLS → Overview** → chọn **Full (strict)**.
+4. **Cloudflare → SSL/TLS → Overview → chọn `Full (strict)`.** ⚠️ Đừng để `Flexible` — sẽ lặp redirect vô hạn.
 
-> Muốn nhanh gọn không cài cert origin: để nguyên nginx HTTP và đặt SSL mode **Flexible**. Kém an toàn hơn (CF↔VPS không mã hoá) — chỉ nên dùng tạm.
+> Chưa muốn cài cert? Cứ để nginx HTTP (sau bước 2 của mục Cài đặt) và đặt Cloudflare SSL mode **Flexible** để người dùng vẫn thấy ổ khoá HTTPS. Đoạn CF↔VPS chưa mã hoá — chỉ nên dùng tạm.
 
 ## 5. Tắt luồng CI cũ
 
